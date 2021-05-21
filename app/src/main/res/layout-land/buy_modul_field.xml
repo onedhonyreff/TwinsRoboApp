@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_weight="1"
+        android:elevation="4dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/llTitlePopUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:background="#36AAF4">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Pembelian Modul"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/mssemibold"
+                    android:textColor="#FFFFFF" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivClosePopUpPembelian"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_close"
+                android:layout_margin="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true"
+                android:visibility="visible" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="20dp"
+                android:layout_below="@id/llTitlePopUp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="5" />-->
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvModulItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_weight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        app:cardElevation="6dp"
+                        app:cardCornerRadius="12dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginVertical="6dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:paddingVertical="16dp"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_card_item">
+
+                            <ImageView
+                                android:id="@+id/ivModulItemPembelian"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitCenter"
+                                android:layout_marginHorizontal="20dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/robot1"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/tvTitleModulPembelian"
+                                android:layout_marginHorizontal="20dp"
+                                android:layout_marginTop="12dp"
+                                android:textSize="12sp"
+                                android:textColor="#6f6f6f"
+                                android:text="Pemrograman Robot"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="15dp"
+                        android:paddingVertical="6dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+                        <TextView
+                            android:id="@+id/tvPopupHargaPembelian"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:text="Rp. 99999 ,-"
+                            android:textColor="#36AAF4"
+                            android:textSize="15sp"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/mssemibold"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:text="Klik tombol dibawah untuk membeli modul pembelajaran"
+                            android:textSize="10sp"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/mssemibold"/>
+
+                        <Button
+                            android:id="@+id/btnPopupBeliPembelian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingHorizontal="30dp"
+                            android:background="@drawable/blue_selected"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/msmedium"
+                            android:text="Buy Now"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/btn_ripple_effect_low_radius"/>
+                    </LinearLayout>
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="5" />-->
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5" />
+
+</LinearLayout>

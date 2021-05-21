@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llMateriItemList"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_marginVertical="6dp"
+    android:layout_marginHorizontal="2dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="6dp"
+        android:layout_marginHorizontal="2dp"
+        android:minHeight="100dp"
+        android:elevation="8dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="12dp"
+        android:layout_weight="8">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_margin="10dp"
+            android:src="@drawable/arduino_logo" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+        android:orientation="vertical"
+        android:layout_marginVertical="6dp"
+        android:layout_weight="1.5">
+
+        <TextView
+            android:id="@+id/tvJudulMateriPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mssemibold"
+            android:text="Pengenalan Gerakan Robot"
+            android:textSize="18sp"
+            android:layout_margin="15dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/msmedium"
+            android:text="14-30 Menit"
+            android:textSize="12sp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="15dp" />
+    </LinearLayout>
+
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/play_circle"-->
+<!--        android:adjustViewBounds="true"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginHorizontal="2dp"-->
+<!--        android:layout_weight="6.4"-->
+<!--        android:foreground="@drawable/btn_ripple_effect"-->
+<!--        android:focusable="true"-->
+<!--        android:clickable="true" />-->
+
+</LinearLayout>

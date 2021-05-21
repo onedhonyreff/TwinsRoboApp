@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlMemberItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="#10000000">
+
+    <RelativeLayout
+        android:id="@+id/rlFrameMemberThumbnails"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="8dp">
+        <ImageView
+            android:id="@+id/ivMemberThumbnails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar_menu"/>
+        <ImageView
+            android:id="@+id/ivMemberBadgePreview"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/vip_badge2"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvMemberNameItemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/rlFrameMemberThumbnails"
+        android:layout_toLeftOf="@+id/ivMemberGenderPreview"
+        android:layout_marginTop="14dp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:text="Member Dummy"
+        android:textSize="15sp"
+        android:fontFamily="@font/mssemibold"/>
+
+    <TextView
+        android:id="@+id/tvMemberSchoolItemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/rlFrameMemberThumbnails"
+        android:layout_toLeftOf="@+id/ivMemberGenderPreview"
+        android:layout_below="@id/tvMemberNameItemList"
+        android:layout_marginBottom="10dp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:text="SMK N 2 Dummy"
+        android:textSize="12sp"
+        android:fontFamily="@font/msmedium"/>
+
+    <ImageView
+        android:id="@+id/ivMemberGenderPreview"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_male"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="8dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_toRightOf="@+id/rlFrameMemberThumbnails"
+        android:layout_below="@id/rlFrameMemberThumbnails"
+        android:background="#888888"/>
+
+</RelativeLayout>

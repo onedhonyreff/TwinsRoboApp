@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MiniGamesActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0094EF"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp">
+
+        <ImageView
+            android:id="@+id/ivBackArrowMG"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Twins Robo App"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/mssemibold"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_notifications"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/oval"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:layout_marginBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mini Games"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/mssemibold"
+                        android:textSize="22sp"
+                        android:textStyle="normal"
+                        android:layout_marginBottom="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+                android:elevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="15dp"
+                    android:layout_marginHorizontal="19dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upload Your Score"
+                        android:textSize="18sp"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="@font/mssemibold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nama"
+                                android:textSize="15sp"
+                                android:layout_marginVertical="10dp"
+                                android:fontFamily="@font/msmedium" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/etNamaMG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="text"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Jenis Robot"
+                                android:textSize="15sp"
+                                android:layout_marginVertical="10dp"
+                                android:fontFamily="@font/msmedium" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/etJenisRobotMG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="text"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kec. Motor"
+                                android:textSize="15sp"
+                                android:layout_marginVertical="10dp"
+                                android:fontFamily="@font/msmedium" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/etKecMotorMG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="15sp"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="text"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="-20dp"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_top_rounded"
+                                android:fontFamily="@font/msmedium"
+                                android:paddingHorizontal="20dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="30dp"
+                                android:text="Kode Program"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:elevation="4dp"/>
+
+                            <Spinner
+                                android:id="@+id/spProgramSelectorMG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/plan_name"
+                                android:paddingVertical="5dp"
+                                android:paddingRight="10dp"
+                                android:spinnerMode="dialog"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="15dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/input_field"
+                            android:elevation="4dp">
+
+                            <TextView
+                                android:id="@+id/tvLineNumberProgramPreviewMG"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:elevation="4dp"
+                                android:fontFamily="@font/msmedium"
+                                android:minHeight="100dp"
+                                android:paddingVertical="10dp"
+                                android:textColor="#0094EF"
+                                android:textSize="12sp"/>
+
+                            <TextView
+                                android:id="@+id/tvProgramPreviewMG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:elevation="4dp"
+                                android:fontFamily="@font/msmedium"
+                                android:minHeight="100dp"
+                                android:paddingVertical="10dp"
+                                android:textColor="#777777"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Upload Video"
+                                android:textSize="15sp"
+                                android:layout_marginVertical="10dp"
+                                android:fontFamily="@font/msmedium" />
+
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:id="@+id/flContainerVideoMG"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:visibility="gone">
+                            <VideoView
+                                android:id="@+id/vvVideoMG"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"/>
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tvDurasiVideoMG"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Duration : 0 secon"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            android:textColor="#0094EF"
+                            android:layout_marginVertical="10dp"
+                            android:fontFamily="@font/msmedium"
+                            android:visibility="gone"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvPathUploadVideoMG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:textSize="13sp"
+                                android:hint="Path..."
+                                android:singleLine="true"
+                                android:ellipsize="start"
+                                android:textColor="#777777"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_marginVertical="4dp"
+                                android:layout_marginRight="4dp"/>
+
+                            <Button
+                                android:id="@+id/btnBrowsePathMG"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="5dp"
+                                android:layout_weight="2.8"
+                                android:background="@drawable/bg_btn"
+                                android:layout_marginLeft="5dp"
+                                android:text="Browse"
+                                android:textColor="#FFFFFF"
+                                android:textAllCaps="false"
+                                android:fontFamily="@font/msmedium"
+                                android:textSize="12sp"
+                                android:foreground="@drawable/btn_ripple_effect"
+                                android:clickable="true"
+                                android:focusable="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnSaveMG"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/bg_btn"
+                        android:text="Save"
+                        android:textColor="#FFFFFF"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/msmedium"
+                        android:textSize="12sp"
+                        android:foreground="@drawable/btn_ripple_effect"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+                android:elevation="8dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCatChampion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="19dp"
+                        android:background="#F0F0F0"
+                        tools:listitem="@layout/championship_leader_item" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

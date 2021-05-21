@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llLearnRobot_Potrait"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LearnRobotActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0094EF"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp">
+
+        <ImageView
+            android:id="@+id/ivBackArrowLR"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Twins Robo App"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/mssemibold"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_notifications"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/oval"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Learn Robot"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/mssemibold"
+                        android:textSize="22sp"
+                        android:textStyle="normal"
+                        android:layout_marginBottom="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginVertical="20dp">
+
+                <EditText
+                    android:id="@+id/etSearchLearnCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Cari Materi Disini..."
+                    android:background="@drawable/search_layout"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:inputType="text"
+                    android:textColor="#777777"
+                    android:maxLines="1"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/msmedium" />
+
+                <ImageView
+                    android:id="@+id/ivButtonSearchLearnCategory"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/search_button"
+                    android:foreground="@drawable/btn_ripple_effect"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+                android:elevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="15dp"
+                    android:layout_marginHorizontal="19dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kategori"
+                            android:textSize="15sp"
+                            android:layout_marginVertical="10dp"
+                            android:fontFamily="@font/mssemibold"
+                            android:layout_alignParentLeft="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View More"
+                            android:textSize="15sp"
+                            android:textColor="#36AAF4"
+                            android:layout_marginVertical="10dp"
+                            android:fontFamily="@font/mssemibold"
+                            android:layout_alignParentRight="true" />
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvListModul"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/modul_item"
+                        android:visibility="visible"/>
+
+                    <GridLayout
+                        android:columnCount="2"
+                        android:rowCount="3"
+                        android:alignmentMode="alignMargins"
+                        android:columnOrderPreserved="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvLearnRobotItem1"
+                            android:layout_width="10dp"
+                            android:layout_height="160dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            app:cardElevation="6dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:paddingVertical="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_card_item">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitCenter"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/robot1"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginTop="12dp"
+                                    android:textSize="12sp"
+                                    android:textColor="#6f6f6f"
+                                    android:text="Pemrograman Robot"
+                                    android:textAlignment="center"
+                                    android:fontFamily="@font/msmedium"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvLearnRobotItem2"
+                            android:layout_width="10dp"
+                            android:layout_height="160dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            app:cardElevation="6dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:paddingVertical="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_card_item">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/merakit_robot"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginTop="12dp"
+                                    android:textSize="12sp"
+                                    android:textColor="#6f6f6f"
+                                    android:text="Pembelajaran Merakit Robot"
+                                    android:textAlignment="center"
+                                    android:fontFamily="@font/msmedium"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvLearnRobotItem3"
+                            android:layout_width="10dp"
+                            android:layout_height="160dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            app:cardElevation="6dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:paddingVertical="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_card_item">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitCenter"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/arduino"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginTop="12dp"
+                                    android:textSize="12sp"
+                                    android:textColor="#6f6f6f"
+                                    android:text="Pemrograman Arduino"
+                                    android:textAlignment="center"
+                                    android:fontFamily="@font/msmedium"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvLearnRobotItem4"
+                            android:layout_width="10dp"
+                            android:layout_height="160dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            app:cardElevation="6dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:paddingVertical="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_card_item">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/iot"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginTop="12dp"
+                                    android:textSize="12sp"
+                                    android:textColor="#6f6f6f"
+                                    android:text="Pembelajaran Internet Of Think"
+                                    android:textAlignment="center"
+                                    android:fontFamily="@font/msmedium"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvLearnRobotItem5"
+                            android:layout_width="10dp"
+                            android:layout_height="160dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            app:cardElevation="6dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:paddingVertical="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_card_item">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitCenter"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/elektro"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginTop="12dp"
+                                    android:textSize="12sp"
+                                    android:textColor="#6f6f6f"
+                                    android:text="Pengenalan Elektronika"
+                                    android:textAlignment="center"
+                                    android:fontFamily="@font/msmedium"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvLearnRobotItem6"
+                            android:layout_width="10dp"
+                            android:layout_height="160dp"
+                            android:layout_columnWeight="1"
+                            android:layout_rowWeight="1"
+                            app:cardElevation="6dp"
+                            app:cardCornerRadius="12dp"
+                            android:layout_margin="12dp"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:paddingVertical="16dp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/bg_card_item">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:scaleType="fitCenter"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/android_dev"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginTop="12dp"
+                                    android:textSize="12sp"
+                                    android:textColor="#6f6f6f"
+                                    android:text="Perograman Android"
+                                    android:textAlignment="center"
+                                    android:fontFamily="@font/msmedium"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </GridLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

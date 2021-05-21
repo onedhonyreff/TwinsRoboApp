@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_weight="1"
+        android:elevation="4dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/llTitlePopUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="5dp"
+                android:background="#36AAF4">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Masukkan Kode OTP"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/mssemibold"
+                    android:textColor="#FFFFFF" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivClosePopUpOtpVerification"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_close"
+                android:layout_margin="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true"
+                android:visibility="visible" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="20dp"
+                android:layout_below="@id/llTitlePopUp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+                        <EditText
+                            android:id="@+id/etOtpBox1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/msmedium"
+                            android:background="@drawable/flat_input_field"
+                            android:paddingVertical="10dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="1"
+                            android:focusable="true"/>
+                        <EditText
+                            android:id="@+id/etOtpBox2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/msmedium"
+                            android:background="@drawable/flat_input_field"
+                            android:paddingVertical="10dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="1"
+                            android:focusable="true"/>
+                        <EditText
+                            android:id="@+id/etOtpBox3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/msmedium"
+                            android:background="@drawable/flat_input_field"
+                            android:paddingVertical="10dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="1"
+                            android:focusable="true"/>
+                        <EditText
+                            android:id="@+id/etOtpBox4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/msmedium"
+                            android:background="@drawable/flat_input_field"
+                            android:paddingVertical="10dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="1"
+                            android:focusable="true"/>
+                        <EditText
+                            android:id="@+id/etOtpBox5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/msmedium"
+                            android:background="@drawable/flat_input_field"
+                            android:paddingVertical="10dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="1"
+                            android:focusable="true"/>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5" />
+                </LinearLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabSubmitOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_arrow_next"
+                    app:elevation="0dp"
+                    app:fabSize="mini"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Jika tidak menerima email, cek email dan coba lagi."
+                    android:textSize="10sp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/mssemibold"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5" />
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.MemberFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/llActName"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/oval"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:layout_marginBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Member"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/mssemibold"
+                        android:textSize="22sp"
+                        android:textStyle="normal"
+                        android:layout_marginBottom="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/llActName"
+                android:layout_marginHorizontal="2dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMemberList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/member_item"
+                    android:visibility="visible"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlFailedRetrieveMember"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/mssemibold"
+                        android:textAlignment="center"
+                        android:text="Gagal menghubungi server"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pbMemberFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminateDrawable="@drawable/custom_progress_bar_4"
+        android:indeterminateDuration="@integer/material_motion_duration_long_2"
+        android:visibility="gone"/>
+
+</RelativeLayout>

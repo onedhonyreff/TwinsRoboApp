@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LearningListActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0094EF"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp">
+
+        <ImageView
+            android:id="@+id/ivBackArrowLL"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Twins Robo App"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/mssemibold"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_notifications"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/oval"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Learn List"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/mssemibold"
+                        android:textSize="22sp"
+                        android:textStyle="normal"
+                        android:layout_marginBottom="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginVertical="20dp">
+
+                <EditText
+                    android:id="@+id/etSearchLearnList"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Cari Materi Disini..."
+                    android:background="@drawable/search_layout"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:inputType="text"
+                    android:textColor="#777777"
+                    android:maxLines="1"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/msmedium" />
+
+                <ImageView
+                    android:id="@+id/ivButtonSearchLearnList"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/search_button"
+                    android:foreground="@drawable/btn_ripple_effect"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+                android:elevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="15dp"
+                    android:layout_marginHorizontal="19dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Materi"
+                            android:textSize="15sp"
+                            android:layout_marginVertical="10dp"
+                            android:fontFamily="@font/mssemibold"
+                            android:layout_alignParentLeft="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View All"
+                            android:textSize="15sp"
+                            android:textColor="#36AAF4"
+                            android:layout_marginVertical="10dp"
+                            android:fontFamily="@font/mssemibold"
+                            android:layout_alignParentRight="true" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvListMateri"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/learning_item"
+                            android:visibility="visible">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+<!--                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                            android:id="@+id/llMateriCoba"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:layout_marginVertical="6dp"-->
+<!--                            android:layout_marginHorizontal="2dp"-->
+<!--                            android:visibility="visible">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_marginHorizontal="2dp"-->
+<!--                                android:minHeight="100dp"-->
+<!--                                android:elevation="8dp"-->
+<!--                                app:cardElevation="2dp"-->
+<!--                                app:cardCornerRadius="12dp"-->
+<!--                                android:layout_weight="5">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:adjustViewBounds="true"-->
+<!--                                    android:layout_margin="10dp"-->
+<!--                                    android:src="@drawable/arduino_logo" />-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:minWidth="100dp"-->
+<!--                                android:orientation="vertical"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_weight="2">-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/mssemibold"-->
+<!--                                    android:text="Pengenalan Gerakan Robot"-->
+<!--                                    android:textSize="18sp"-->
+<!--                                    android:layout_margin="15dp" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/msmedium"-->
+<!--                                    android:text="14-30 Menit"-->
+<!--                                    android:textSize="12sp"-->
+<!--                                    android:layout_marginHorizontal="15dp"-->
+<!--                                    android:layout_marginBottom="15dp" />-->
+<!--                            </LinearLayout>-->
+
+<!--&lt;!&ndash;                            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:src="@drawable/play_circle"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:adjustViewBounds="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_marginHorizontal="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_weight="6"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:foreground="@drawable/btn_ripple_effect"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:focusable="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:clickable="true" />&ndash;&gt;-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:layout_marginVertical="6dp"-->
+<!--                            android:layout_marginHorizontal="2dp"-->
+<!--                            android:visibility="visible">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_marginHorizontal="2dp"-->
+<!--                                android:minHeight="100dp"-->
+<!--                                android:elevation="8dp"-->
+<!--                                app:cardElevation="2dp"-->
+<!--                                app:cardCornerRadius="12dp"-->
+<!--                                android:layout_weight="5">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:adjustViewBounds="true"-->
+<!--                                    android:layout_margin="10dp"-->
+<!--                                    android:src="@drawable/arduino_logo" />-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:minWidth="100dp"-->
+<!--                                android:orientation="vertical"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_weight="2">-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/mssemibold"-->
+<!--                                    android:text="Pengenalan Gerakan Robot"-->
+<!--                                    android:textSize="18sp"-->
+<!--                                    android:layout_margin="15dp" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/msmedium"-->
+<!--                                    android:text="14-30 Menit"-->
+<!--                                    android:textSize="12sp"-->
+<!--                                    android:layout_marginHorizontal="15dp"-->
+<!--                                    android:layout_marginBottom="15dp" />-->
+<!--                            </LinearLayout>-->
+
+<!--&lt;!&ndash;                            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:src="@drawable/play_circle"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:adjustViewBounds="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_marginHorizontal="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_weight="6" />&ndash;&gt;-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:layout_marginVertical="6dp"-->
+<!--                            android:layout_marginHorizontal="2dp"-->
+<!--                            android:visibility="visible">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_marginHorizontal="2dp"-->
+<!--                                android:minHeight="100dp"-->
+<!--                                android:elevation="8dp"-->
+<!--                                app:cardElevation="2dp"-->
+<!--                                app:cardCornerRadius="12dp"-->
+<!--                                android:layout_weight="5">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:adjustViewBounds="true"-->
+<!--                                    android:layout_margin="10dp"-->
+<!--                                    android:src="@drawable/arduino_logo" />-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:minWidth="100dp"-->
+<!--                                android:orientation="vertical"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_weight="2">-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/mssemibold"-->
+<!--                                    android:text="Pengenalan Gerakan Robot"-->
+<!--                                    android:textSize="18sp"-->
+<!--                                    android:layout_margin="15dp" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/msmedium"-->
+<!--                                    android:text="14-30 Menit"-->
+<!--                                    android:textSize="12sp"-->
+<!--                                    android:layout_marginHorizontal="15dp"-->
+<!--                                    android:layout_marginBottom="15dp" />-->
+<!--                            </LinearLayout>-->
+
+<!--&lt;!&ndash;                            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:src="@drawable/play_circle"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:adjustViewBounds="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_marginHorizontal="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_weight="6" />&ndash;&gt;-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:layout_marginVertical="6dp"-->
+<!--                            android:layout_marginHorizontal="2dp"-->
+<!--                            android:visibility="visible">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_marginHorizontal="2dp"-->
+<!--                                android:minHeight="100dp"-->
+<!--                                android:elevation="8dp"-->
+<!--                                app:cardElevation="2dp"-->
+<!--                                app:cardCornerRadius="12dp"-->
+<!--                                android:layout_weight="5">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:adjustViewBounds="true"-->
+<!--                                    android:layout_margin="10dp"-->
+<!--                                    android:src="@drawable/arduino_logo" />-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:minWidth="100dp"-->
+<!--                                android:orientation="vertical"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_weight="2">-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/mssemibold"-->
+<!--                                    android:text="Pengenalan Gerakan Robot"-->
+<!--                                    android:textSize="18sp"-->
+<!--                                    android:layout_margin="15dp" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/msmedium"-->
+<!--                                    android:text="14-30 Menit"-->
+<!--                                    android:textSize="12sp"-->
+<!--                                    android:layout_marginHorizontal="15dp"-->
+<!--                                    android:layout_marginBottom="15dp" />-->
+<!--                            </LinearLayout>-->
+
+<!--&lt;!&ndash;                            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:src="@drawable/play_circle"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:adjustViewBounds="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_marginHorizontal="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_weight="6" />&ndash;&gt;-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:layout_marginVertical="6dp"-->
+<!--                            android:layout_marginHorizontal="2dp"-->
+<!--                            android:visibility="visible">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_marginHorizontal="2dp"-->
+<!--                                android:minHeight="100dp"-->
+<!--                                android:elevation="8dp"-->
+<!--                                app:cardElevation="2dp"-->
+<!--                                app:cardCornerRadius="12dp"-->
+<!--                                android:layout_weight="5">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:adjustViewBounds="true"-->
+<!--                                    android:layout_margin="10dp"-->
+<!--                                    android:src="@drawable/arduino_logo" />-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:minWidth="100dp"-->
+<!--                                android:orientation="vertical"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_weight="2">-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/mssemibold"-->
+<!--                                    android:text="Pengenalan Gerakan Robot"-->
+<!--                                    android:textSize="18sp"-->
+<!--                                    android:layout_margin="15dp" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/msmedium"-->
+<!--                                    android:text="14-30 Menit"-->
+<!--                                    android:textSize="12sp"-->
+<!--                                    android:layout_marginHorizontal="15dp"-->
+<!--                                    android:layout_marginBottom="15dp" />-->
+<!--                            </LinearLayout>-->
+
+<!--&lt;!&ndash;                            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:src="@drawable/play_circle"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:adjustViewBounds="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_marginHorizontal="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_weight="6" />&ndash;&gt;-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:layout_marginVertical="6dp"-->
+<!--                            android:layout_marginHorizontal="2dp"-->
+<!--                            android:visibility="visible">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_marginHorizontal="2dp"-->
+<!--                                android:minHeight="100dp"-->
+<!--                                android:elevation="8dp"-->
+<!--                                app:cardElevation="2dp"-->
+<!--                                app:cardCornerRadius="12dp"-->
+<!--                                android:layout_weight="5">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:adjustViewBounds="true"-->
+<!--                                    android:layout_margin="10dp"-->
+<!--                                    android:src="@drawable/arduino_logo" />-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:minWidth="100dp"-->
+<!--                                android:orientation="vertical"-->
+<!--                                android:layout_marginVertical="6dp"-->
+<!--                                android:layout_weight="2">-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/mssemibold"-->
+<!--                                    android:text="Pengenalan Gerakan Robot"-->
+<!--                                    android:textSize="18sp"-->
+<!--                                    android:layout_margin="15dp" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/msmedium"-->
+<!--                                    android:text="14-30 Menit"-->
+<!--                                    android:textSize="12sp"-->
+<!--                                    android:layout_marginHorizontal="15dp"-->
+<!--                                    android:layout_marginBottom="15dp" />-->
+<!--                            </LinearLayout>-->
+
+<!--&lt;!&ndash;                            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:src="@drawable/play_circle"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:adjustViewBounds="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_marginHorizontal="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_weight="6" />&ndash;&gt;-->
+
+<!--                        </LinearLayout>-->
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

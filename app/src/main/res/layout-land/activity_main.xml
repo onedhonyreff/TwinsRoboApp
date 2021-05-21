@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_land"
+    android:paddingHorizontal="20dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/llFrameSplashLogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/ivSplashLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/logo_twins_robo_transparant"
+                android:layout_weight="1.3" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <!--            <TextView-->
+        <!--                android:textColor="#FFFFFF"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="-30dp"-->
+        <!--                android:textAlignment="center"-->
+        <!--                android:fontFamily="@font/mssemibold"-->
+        <!--                android:textStyle="normal"-->
+        <!--                android:textSize="34sp"-->
+        <!--                android:text="Twins Robo App"-->
+        <!--                android:padding="2dp"-->
+        <!--                android:shadowColor="#000000"-->
+        <!--                android:shadowDx="0"-->
+        <!--                android:shadowDy="5"-->
+        <!--                android:shadowRadius="9" />-->
+        <TextView
+            android:id="@+id/tvTextSplash"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-30dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/mssemibold"
+            android:textStyle="normal"
+            android:textSize="30sp"
+            android:text="Twins Robo App"
+            android:padding="2dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

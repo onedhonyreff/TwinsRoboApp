@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScannerActivity">
+
+    <com.budiyev.android.codescanner.CodeScannerView
+        android:id="@+id/scanner_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:autoFocusButtonColor="@android:color/white"
+        app:autoFocusButtonVisible="true"
+        app:flashButtonColor="@android:color/white"
+        app:flashButtonVisible="true"
+        app:frameColor="@android:color/white"
+        app:frameCornersSize="50dp"
+        app:frameCornersRadius="0dp"
+        app:frameAspectRatioWidth="1"
+        app:frameAspectRatioHeight="1"
+        app:frameSize="0.75"
+        app:frameThickness="2dp"
+        app:maskColor="#77000000"/>
+    
+    <TextView
+        android:id="@+id/tvScannerResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rlBtnScanner"
+        android:text="Scanning..."
+        android:layout_marginHorizontal="30dp"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/msmedium"/>
+    
+    <RelativeLayout
+        android:id="@+id/rlBtnScanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:paddingHorizontal="20dp">
+        <Button
+            android:id="@+id/btnTryScannAgain"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="10dp"
+            android:text="Try Again"
+            android:textColor="#0094EF"
+            android:textAllCaps="false"
+            android:fontFamily="@font/mssemibold"
+            android:textSize="15sp"
+            android:background="@drawable/bg_btn_primary"
+            android:foreground="@drawable/btn_ripple_effect"
+            android:focusable="true"
+            android:clickable="true"/>
+        <Button
+            android:id="@+id/btnTakeScannResult"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="10dp"
+            android:text="Go"
+            android:textColor="#0094EF"
+            android:textAllCaps="false"
+            android:fontFamily="@font/mssemibold"
+            android:textSize="15sp"
+            android:background="@drawable/bg_btn_primary"
+            android:foreground="@drawable/btn_ripple_effect"
+            android:focusable="true"
+            android:clickable="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llSignUp_landscape"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_app_land"
+    tools:context=".SigninActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="70dp"
+            android:paddingVertical="20dp"
+            android:layout_weight="1">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#CFEAFB"
+                        android:textAlignment="center"
+                        android:text="Twins Robo Apps"
+                        android:textSize="25sp"
+                        android:lineHeight="38sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/mssemibold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        android:text="Let's Register Your Account"
+                        android:textSize="15sp"
+                        android:textAlignment="center"
+                        android:lineHeight="25sp"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/mssemibold"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="40dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/mssemibold"
+                        android:text="Your Email To Register"
+                        android:textSize="14sp"
+                        android:lineHeight="17sp" />
+
+                    <EditText
+                        android:id="@+id/etRegEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:background="@drawable/input_field"
+                        android:textSize="16sp"
+                        android:inputType="text"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="23dp"
+                        android:maxLines="1"
+                        android:textColor="#777777"
+                        android:fontFamily="@font/msmedium"
+                        android:hint="example.user@domain.org" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/mssemibold"
+                        android:text="Password"
+                        android:textSize="14sp"
+                        android:lineHeight="17sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:passwordToggleEnabled="true">
+
+                        <EditText
+                            android:id="@+id/etRegPass"
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:background="@drawable/input_field"
+                            android:textSize="16sp"
+                            android:inputType="textPassword"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="23dp"
+                            android:maxLines="1"
+                            android:textColor="#777777"
+                            android:fontFamily="@font/msmedium" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/mssemibold"
+                        android:text="Re-Type Password"
+                        android:textSize="14sp"
+                        android:lineHeight="17sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:passwordToggleEnabled="true">
+
+                        <EditText
+                            android:id="@+id/etRegRePass"
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:background="@drawable/input_field"
+                            android:textSize="16sp"
+                            android:inputType="textPassword"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="23dp"
+                            android:maxLines="1"
+                            android:textColor="#777777"
+                            android:fontFamily="@font/msmedium"
+                            android:enabled="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:id="@+id/toLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="I Already Have An Account"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:lineHeight="13sp"
+                            android:fontFamily="@font/msmedium"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnSignUp"
+                        android:layout_width="161dp"
+                        android:layout_height="27dp"
+                        android:layout_marginTop="18dp"
+                        android:background="@drawable/bg_btn_primary"
+                        android:layout_gravity="center"
+                        android:text="Next"
+                        android:fontFamily="@font/mssemibold"
+                        android:textAllCaps="false"
+                        android:textColor="#36AAF4"
+                        android:foreground="@drawable/btn_ripple_effect"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-120dp"
+            android:layout_weight="2">
+
+            <ImageView
+                android:id="@+id/ivRegIconHello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="80dp"
+                android:adjustViewBounds="true"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/giphy7" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pbSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminateDrawable="@drawable/custom_progress_bar_4"
+        android:indeterminateDuration="@integer/material_motion_duration_long_2"
+        android:visibility="gone"/>
+
+</RelativeLayout>

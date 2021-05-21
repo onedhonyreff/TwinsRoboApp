@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    android:paddingVertical="20dp"
+    tools:context=".login"
+    android:id="@+id/rlLoginLayout_potrait">
+
+    <Button
+        android:id="@+id/toSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bg_left_rounded_button"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:text="Daftar"
+        android:fontFamily="@font/mssemibold"
+        android:textAllCaps="false"
+        android:textColor="#36AAF4"
+        android:foreground="@drawable/btn_ripple_effect_left_rounded"
+        android:clickable="true"
+        android:focusable="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="50dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivIconHello"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:padding="10dp"
+                    android:src="@drawable/hello" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:text="Welcome To"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:lineHeight="38sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/mssemibold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#CFEAFB"
+                    android:text="Twins Robo Apps"
+                    android:textAlignment="center"
+                    android:textSize="30sp"
+                    android:lineHeight="38sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/mssemibold"
+                    android:layout_marginBottom="40dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/mssemibold"
+                    android:text="Username Or Email"
+                    android:textSize="14sp"
+                    android:lineHeight="17sp" />
+
+                <EditText
+                    android:id="@+id/etLoginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:background="@drawable/input_field"
+                    android:textSize="16sp"
+                    android:inputType="text"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="23dp"
+                    android:maxLines="1"
+                    android:textColor="#777777"
+                    android:fontFamily="@font/msmedium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/mssemibold"
+                    android:text="Password"
+                    android:textSize="14sp"
+                    android:lineHeight="17sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/etLoginPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="23dp"
+                        android:background="@drawable/input_field"
+                        android:fontFamily="@font/msmedium"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textColor="#888888"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/toSolvePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Forgot the password? Solve here"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:textAlignment="center"
+                android:lineHeight="13sp"
+                android:fontFamily="@font/msmedium"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="161dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_btn_primary"
+                android:layout_gravity="center"
+                android:text="Login"
+                android:fontFamily="@font/mssemibold"
+                android:textAllCaps="false"
+                android:textColor="#36AAF4"
+                android:foreground="@drawable/btn_ripple_effect"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pbLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminateDrawable="@drawable/custom_progress_bar_4"
+        android:indeterminateDuration="@integer/material_motion_duration_long_2"
+        android:visibility="gone"/>
+
+</RelativeLayout>

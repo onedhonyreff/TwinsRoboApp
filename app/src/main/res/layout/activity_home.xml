@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/appBarMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#0094EF"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp">
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Twins Robo App"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/mssemibold"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_notifications"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/flMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btmNavMain"
+        android:layout_below="@id/appBarMain" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmNavMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:itemIconTint="#0094EF"
+        app:itemTextColor="#0094EF"
+        android:theme="@style/Widget.BottomNavigationView"
+        app:menu="@menu/bottom_navigation" />
+
+    <ProgressBar
+        android:id="@+id/pbHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminateDrawable="@drawable/custom_progress_bar_4"
+        android:indeterminateDuration="@integer/material_motion_duration_long_2"
+        android:visibility="gone"/>
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:gravity="center">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="60dp"-->
+    <!--            android:layout_height="50dp"-->
+    <!--            android:layout_marginVertical="5dp"-->
+    <!--            android:layout_marginHorizontal="6dp"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:gravity="center"-->
+    <!--            android:foreground="?android:attr/selectableItemBackground"-->
+    <!--            android:clickable="true"-->
+    <!--            android:focusable="true">-->
+    <!--            <ImageView-->
+    <!--                android:layout_width="30dp"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:src="@drawable/ic_home"/>-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="Home"-->
+    <!--                android:textColor="#0094EF"-->
+    <!--                android:textSize="12sp"-->
+    <!--                android:fontFamily="@font/msmedium"/>-->
+
+    <!--        </LinearLayout>-->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="60dp"-->
+    <!--            android:layout_height="50dp"-->
+    <!--            android:layout_marginVertical="5dp"-->
+    <!--            android:layout_marginHorizontal="6dp"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:gravity="center"-->
+    <!--            android:foreground="?android:attr/selectableItemBackground"-->
+    <!--            android:clickable="true"-->
+    <!--            android:focusable="true">-->
+    <!--            <ImageView-->
+    <!--                android:layout_width="30dp"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:src="@drawable/ic_groups"/>-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="Member"-->
+    <!--                android:textColor="#0094EF"-->
+    <!--                android:textSize="12sp"-->
+    <!--                android:fontFamily="@font/msmedium"/>-->
+
+    <!--        </LinearLayout>-->
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/llAccount"-->
+    <!--            android:layout_width="60dp"-->
+    <!--            android:layout_height="50dp"-->
+    <!--            android:layout_marginVertical="5dp"-->
+    <!--            android:layout_marginHorizontal="6dp"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:gravity="center"-->
+    <!--            android:foreground="?android:attr/selectableItemBackground"-->
+    <!--            android:clickable="true"-->
+    <!--            android:focusable="true">-->
+    <!--            <ImageView-->
+    <!--                android:layout_width="30dp"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:src="@drawable/ic_person"/>-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="Account"-->
+    <!--                android:textColor="#0094EF"-->
+    <!--                android:textSize="12sp"-->
+    <!--                android:fontFamily="@font/msmedium"/>-->
+
+    <!--        </LinearLayout>-->
+
+    <!--    </LinearLayout>-->
+
+</RelativeLayout>

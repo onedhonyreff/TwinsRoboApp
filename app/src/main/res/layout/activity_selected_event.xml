@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llDetailLomba_Potrait"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".SelectedEventActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0094EF"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp">
+
+        <ImageView
+            android:id="@+id/ivBackArrowDL"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Twins Robo App"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/mssemibold"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_notifications"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/oval"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:layout_marginBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/mssemibold"
+                        android:text="Detail Lomba"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+                android:elevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="15dp"
+                    android:layout_marginHorizontal="19dp">
+
+                    <TextView
+                        android:id="@+id/tvIdEventDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp">
+
+                        <ImageView
+                            android:id="@+id/ivPamfletDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/banner_lomba"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlBackgroundPointer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#CC444444"
+                            android:visibility="visible"/>
+
+                        <LinearLayout
+                            android:id="@+id/llZoomPamfletDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="5dp"
+                            android:background="#CC444444"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_margin="10dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Zoom"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/mssemibold"
+                                android:textColor="#E7E7E7"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="5dp"/>
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/ic_zoom"
+                                android:adjustViewBounds="true"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivPointerToZoomPamfletDetail"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_toRightOf="@id/llZoomPamfletDetail"
+                            android:layout_below="@+id/llZoomPamfletDetail"
+                            android:layout_marginTop="-65dp"
+                            android:layout_marginLeft="-80dp"
+                            android:src="@drawable/pointing_anim2"
+                            android:visibility="visible"/>
+                        <TextView
+                            android:id="@+id/tvTextToZoom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_below="@+id/ivPointerToZoomPamfletDetail"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:text="Click Here To Zoom"
+                            android:fontFamily="@font/mssemibold"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-45dp">
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fabLikeEvent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_disslike"
+                            app:backgroundTint="#FFFFFF"
+                            android:layout_margin="15dp"
+                            app:elevation="5dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/btn_ripple_effect"/>
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fabShareEvent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@id/fabLikeEvent"
+                            android:src="@drawable/ic_share"
+                            app:backgroundTint="#FFFFFF"
+                            android:layout_marginVertical="15dp"
+                            app:elevation="5dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/btn_ripple_effect"/>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tvDurasiTanggalDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3 Desember 2020"
+                        android:fontFamily="@font/msmedium" />
+
+                    <TextView
+                        android:id="@+id/tvJudulLombaDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Super Lomba Robotik Nasional 2021"
+                        android:fontFamily="@font/mssemibold"
+                        android:textSize="20sp"
+                        android:layout_marginVertical="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvDeskripsiDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dengan bangga Rotary Club of Surabaya Persada mengadakan *Lomba Robotika Nasional ke 2 tahun 2021* yg akan diselenggarakan pada tanggal *27-28 Maret 2021*.
+Piagam pemenang tandatangan Gubernur Jawa Timur.\n\nKategori lomba dan contact person tertera di flyer.\n\nKetentuan pembayaran :
+*Early Bird* Rp 250.000 tgl 28 - 29 Nov 2020.
+Tgl 30 Nov 2020 dst Rp 300.000
+Pendaftaran ke rekening BCA 0884574443 atas nama Roos Hermansyah"
+                        android:fontFamily="@font/msmedium"
+                        android:layout_marginBottom="20dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+
+                        <Button
+                            android:id="@+id/btnCatSumoRcDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="18dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/blue_selected"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/msmedium"
+                            android:text="Sumo RC"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"/>
+
+                        <Button
+                            android:id="@+id/btnCatMazeSolvingDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="18dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/blue_selected"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/msmedium"
+                            android:text="Maze Solving"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+
+                        <Button
+                            android:id="@+id/btnCatTransporterDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="18dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/blue_selected"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/msmedium"
+                            android:text="Transporter"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"/>
+
+                        <Button
+                            android:id="@+id/btnCatDroneRaceDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="18dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/blue_selected"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/msmedium"
+                            android:text="Drone Race"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+
+                        <Button
+                            android:id="@+id/btnCatUnderWaterDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="100dp"
+                            android:paddingHorizontal="18dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/blue_selected"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/msmedium"
+                            android:text="Underwater"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"/>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginRight="8dp">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/ic_share" />
+
+                            <TextView
+                                android:id="@+id/tvNumberOfSharesDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/msmedium"
+                                android:textSize="10sp"
+                                android:text="100"
+                                android:layout_marginRight="10dp"
+                                android:layout_gravity="center" />
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/ic_eye" />
+
+                            <TextView
+                                android:id="@+id/tvNumberOfViewsDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/msmedium"
+                                android:textSize="10sp"
+                                android:text="1000"
+                                android:layout_gravity="center" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

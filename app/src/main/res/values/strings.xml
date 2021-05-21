@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">Twinsrobo_apps</string>
+    <string name="aboutText">Twins Robo Apps merupakan sebuah aplikasi yang berfokus pada
+        pembelajaran robotika yang di gagas oleh salah satu pelatih robot dan pembuat robot line maze untuk membantu media anak-anak
+        didik sekolah dasar, sekolah menengah dan sekolah atas belajar seluk-beluk dari robotika terutama di robot line tracer maupun line
+        maze. Aplikasi Twins Robo ini di develop oleh Codepan Studio Surabaya di bawah naungan CV. Arindra Production yang pada dasarnya
+        sebuah perusahaan software house di surabaya, selain aplikasi Twins Robo ini ada salah satu aplikasi buatan kami yaitu aplikasi
+        buku E-GA yaitu merupakan sebuah aplikasi absensi untuk anak magang berbasis mobile.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="list_judul_materi_coba">
+        <item>Pengenalan Fungsi Robot</item>
+        <item>Pengenalan Komponen Robot</item>
+        <item>Pengenalan Software Robot</item>
+        <item>Perancangan Robot</item>
+        <item>Perakitan Robot</item>
+        <item>Perograman Robot</item>
+        <item>Pengetesan Robot</item>
+    </string-array>
+    <string-array name="list_video_materi_coba">
+        <item>oHKCwyUa2rg</item>
+        <item>1w7OgIMMRc4</item>
+        <item>Za9LY6Q3EuI</item>
+        <item>wZuW3YvHHLU</item>
+        <item>ICJs1CxCRt0</item>
+        <item>tH2w6Oxx0kQ</item>
+        <item>tAGnKpE4NCI</item>
+    </string-array>
+    <string-array name="list_isi_materi_coba">
+        <item>Ini adalah pelajaran 1</item>
+        <item>Ini adalah pelajaran 2</item>
+        <item>Ini adalah pelajaran 3</item>
+        <item>Ini adalah pelajaran 4</item>
+        <item>Ini adalah pelajaran 5</item>
+        <item>Ini adalah pelajaran 6</item>
+        <item>Ini adalah pelajaran 7</item>
+    </string-array>
+
+
+    <string-array name="image_modul">
+        <item>@drawable/robot1</item>
+        <item>@drawable/merakit_robot</item>
+        <item>@drawable/arduino</item>
+        <item>@drawable/iot</item>
+        <item>@drawable/elektro</item>
+        <item>@drawable/android_dev</item>
+    </string-array>
+    <string-array name="title_modul">
+        <item>Pemrograman Robot</item>
+        <item>Pembelajaran Merakit Robot</item>
+        <item>Pemrograman Arduino</item>
+        <item>Pembelajaran Internet Of Think</item>
+        <item>Pengenalan Elektronika</item>
+        <item>Perograman Android</item>
+    </string-array>
+    <string-array name="harga_modul">
+        <item>120000</item>
+        <item>80000</item>
+        <item>100000</item>
+        <item>150000</item>
+        <item>70000</item>
+        <item>130000</item>
+    </string-array>
+    <string-array name="status_modul">
+        <item>Unlock</item>
+        <item>Lock</item>
+        <item>Unlock</item>
+        <item>Unlock</item>
+        <item>Unlock</item>
+        <item>Lock</item>
+    </string-array>
+
+
+    <string-array name="photo_champion">
+        <item>@drawable/male6</item>
+        <item>@drawable/male2</item>
+        <item>@drawable/female1</item>
+        <item>@drawable/male7</item>
+        <item>@drawable/male9</item>
+        <item>@drawable/female6</item>
+    </string-array>
+    <string-array name="name_champion">
+        <item>Ahmad Alfaridzi</item>
+        <item>Bambang Suwaryono</item>
+        <item>Titik Puji Astuti</item>
+        <item>Dadang Putra Permana</item>
+        <item>Zikri Firmansyah</item>
+        <item>Siti Winingsih</item>
+    </string-array>
+    <string-array name="school_champion">
+        <item>SMP N 8 Bekasi</item>
+        <item>SMP N 1 Majalengka</item>
+        <item>SMP N 3 Bandung</item>
+        <item>SMP N 5 Jakarta</item>
+        <item>SMP N 4 Bekasi</item>
+        <item>SMP N 2 Bandung</item>
+    </string-array>
+    <string-array name="point_champion">
+        <item>58475</item>
+        <item>53452</item>
+        <item>49678</item>
+        <item>45634</item>
+        <item>44563</item>
+        <item>44245</item>
+    </string-array>
+
+
+    <string-array name="list_programs">
+        <item>line(sr, 200, 100);\nline(sl, 200, 100);\nmidway();\nnext();\nsline(50, 200, 100);\ndelay(10);\nright(50, -50, 50);\ndelay(10);\nright(50, -50, 50);\nfindline(200, 100);\nline(sf, 200, 100);\ngripperDown();\ngripperUp();\nmotor(100);\nlinecolor(white, 200, 100);\nSS();\nlinecolor(black, 200, 100);\nleftway();\nsetDown();\nsensor(front);</item>
+        <item>findline(200, 100);\nnext();\nline(sl, 200, 100);\nmidway();\nline(sr, 200, 100);\nright(50, -50, 50);\nsline(50, 200, 100);\ndelay(10);\nright(50, -50, 50);\nsensor(front);\nline(sf, 200, 100);\ngripperDown();\ngripperUp();\nmotor(100);\nlinecolor(white, 200, 100);\nSS();</item>
+        <item>right(50, -50, 50);\nfindline(200, 100);\nline(sf, 200, 100);\ngripperDown();\ngripperUp();\nmotor(100);\nlinecolor(white, 200, 100);\nSS();\nlinecolor(black, 200, 100);\nleftway();\nsetDown();\nsensor(front);\nline(sr, 200, 100);\nline(sl, 200, 100);\nmidway();\nnext();\nsline(50, 200, 100);\ndelay(10);\nright(50, -50, 50);\ndelay(10);\ngripperDown();\ngripperUp();\nmotor(100);\nlinecolor(white, 200, 100);\nSS();\nlinecolor(black, 200, 100);\nleftway();\ngripperDown();\ngripperUp();\nmotor(100);\nlinecolor(white, 200, 100);\nSS();\nlinecolor(black, 200, 100);\nleftway();</item>
+        <item>motor(100);\nfindline(200, 100);\nline(sf, 200, 100);\nright(50, -50, 50);\ngripperDown();\ngripperUp();</item>
+        <item>linecolor(black, 200, 100);\nleftway();\nsetDown();\nsensor(front);\nline(sr, 200, 100);\nline(sl, 200, 100);</item>
+        <item>linecolor(white, 200, 100);\nSS();\nlinecolor(black, 200, 100);\nleftway();\nsetDown();\nsensor(front);\nline(sr, 200, 100);\nline(sl, 200, 100);</item>
+    </string-array>
+    <string-array name="plan_name">
+        <item>Line Tracer Arena Zigzag</item>
+        <item>Tracking Arena Sirkuit</item>
+        <item>Mencari Garis Putus-putus</item>
+        <item>Arena Spiral dan Miring</item>
+        <item>Drag Line Tracer</item>
+        <item>Line Tracer Object Transporter</item>
+    </string-array>
+
+
+    <string-array name="image_materi">
+        <item>@drawable/gambar_materi_dummy_1</item>
+        <item>@drawable/gambar_materi_dummy_2</item>
+        <item>@drawable/gambar_materi_dummy_3</item>
+        <item>@drawable/gambar_materi_dummy_4</item>
+        <item>@drawable/gambar_materi_dummy_5</item>
+        <item>@drawable/gambar_materi_dummy_6</item>
+    </string-array>
+    <string-array name="title_image_materi">
+        <item>Modul Arduino</item>
+        <item>Modul STM32</item>
+        <item>Motor Servo</item>
+        <item>Modul Kamera</item>
+        <item>Motor Gerbox</item>
+        <item>Rotary Lidar</item>
+    </string-array>
+</resources>

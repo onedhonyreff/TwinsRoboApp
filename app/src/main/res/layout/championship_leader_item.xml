@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    2003A9F4-->
+<LinearLayout
+    android:id="@+id/rlChampionshipLeaderItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#8f000000"
+    android:layout_margin="0.2dp"
+    android:elevation="2dp">
+
+    <ImageView
+        android:id="@+id/ivPhotoChampion"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/male6"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_marginVertical="15dp">
+
+        <TextView
+            android:id="@+id/tvNameChampion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Nama Siswa"
+            android:fontFamily="@font/mssemibold"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tvSchoolChampion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Nama Sekolah"
+            android:fontFamily="@font/mssemibold"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/star_xp"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:id="@+id/tvPointChampion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="99999"
+                android:fontFamily="@font/mssemibold"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivTrophyChampion"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/trophy1"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

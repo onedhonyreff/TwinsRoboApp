@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MenuProgramRobotActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0094EF"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="15dp">
+
+        <ImageView
+            android:id="@+id/ivBackArrowCR"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Twins Robo App"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/mssemibold"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_notifications"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/oval"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:layout_marginBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Check My Robot's"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/mssemibold"
+                        android:textSize="22sp"
+                        android:textStyle="normal"
+                        android:layout_marginBottom="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginVertical="20dp">
+
+                <ImageView
+                    android:id="@+id/ivDeviceConnectIndicatorCheck"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_filled_circle_red" />
+
+                <TextView
+                    android:id="@+id/tvDeviceConnectIndicatorCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivDeviceConnectIndicatorCheck"
+                    android:fontFamily="@font/msmedium"
+                    android:text="Disconnected"
+                    android:textSize="15sp"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginHorizontal="24dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnCheckRobotVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/bg_btn"
+                    android:text="Check Robot Version"
+                    android:textColor="#FFFFFF"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/msmedium"
+                    android:textSize="12sp"
+                    android:foreground="@drawable/btn_ripple_effect"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <Button
+                    android:id="@+id/btnConnectMyRobotCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/bg_btn"
+                    android:text="Connect My Robot"
+                    android:textColor="#FFFFFF"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/msmedium"
+                    android:textSize="12sp"
+                    android:foreground="@drawable/btn_ripple_effect"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+                android:elevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Cek Motor"
+                        android:fontFamily="@font/msmedium" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="19dp"
+                        android:layout_marginTop="10dp">
+
+                        <RadioButton
+                            android:id="@+id/rbMaju"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Maju"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/msmedium"
+                            android:textAlignment="center"
+                            android:background="@drawable/custom_radio_selector"
+                            android:textColor="@drawable/custom_radio_text_selector"
+                            android:button="@color/zxing_transparent"
+                            android:padding="10dp"
+                            android:layout_margin="5dp"
+                            android:elevation="4dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rbMundur"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mundur"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/msmedium"
+                            android:textAlignment="center"
+                            android:background="@drawable/custom_radio_selector"
+                            android:textColor="@drawable/custom_radio_text_selector"
+                            android:button="@color/zxing_transparent"
+                            android:padding="10dp"
+                            android:layout_margin="5dp"
+                            android:elevation="4dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="19dp"
+                        android:layout_marginVertical="5dp">
+
+                        <RadioButton
+                            android:id="@+id/rbPutarKiri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Putar Kiri"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/msmedium"
+                            android:textAlignment="center"
+                            android:background="@drawable/custom_radio_selector"
+                            android:textColor="@drawable/custom_radio_text_selector"
+                            android:button="@color/zxing_transparent"
+                            android:padding="10dp"
+                            android:layout_margin="5dp"
+                            android:elevation="4dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rbPutarKanan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Putar Kanan"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/msmedium"
+                            android:textAlignment="center"
+                            android:background="@drawable/custom_radio_selector"
+                            android:textColor="@drawable/custom_radio_text_selector"
+                            android:button="@color/zxing_transparent"
+                            android:padding="10dp"
+                            android:layout_margin="5dp"
+                            android:elevation="4dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="19dp"
+                        android:layout_marginBottom="10dp">
+
+                        <RadioButton
+                            android:id="@+id/rbDiam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Diam"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/msmedium"
+                            android:checked="true"
+                            android:textAlignment="center"
+                            android:background="@drawable/custom_radio_selector"
+                            android:textColor="@drawable/custom_radio_text_selector"
+                            android:button="@color/zxing_transparent"
+                            android:padding="10dp"
+                            android:layout_margin="5dp"
+                            android:elevation="4dp"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:layout_margin="5dp"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnTestMotor"
+                        android:layout_width="200dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_btn"
+                        android:text="Test Motor"
+                        android:layout_gravity="center"
+                        android:textColor="#FFFFFF"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/msmedium"
+                        android:textSize="12sp"
+                        android:foreground="@drawable/btn_ripple_effect"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+                android:elevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:text="Cek Sensor"
+                        android:fontFamily="@font/msmedium" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginVertical="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Front Sensor"
+                            android:layout_marginRight="15dp"
+                            android:fontFamily="@font/msmedium" />
+
+                        <EditText
+                            android:id="@+id/etBitFS"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:hint="Bit"
+                            android:textColor="#777777"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/msmedium"
+                            android:background="@drawable/input_field"
+                            android:elevation="4dp"
+                            android:paddingVertical="5dp"
+                            android:layout_margin="4dp"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="4" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="19dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbFS1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbFS2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbFS3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbFS4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbFS5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbFS6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbFS7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbFS8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginVertical="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rear Sensor"
+                            android:layout_marginRight="15dp"
+                            android:fontFamily="@font/msmedium" />
+
+                        <EditText
+                            android:id="@+id/etBitRS"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:hint="Bit"
+                            android:textColor="#777777"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/msmedium"
+                            android:background="@drawable/input_field"
+                            android:elevation="4dp"
+                            android:paddingVertical="5dp"
+                            android:layout_margin="4dp"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="4" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="19dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbRS1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbRS2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbRS3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbRS4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbRS5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbRS6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbRS7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                            <RadioButton
+                                android:id="@+id/rbRS8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnTestSensor"
+                        android:layout_width="200dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginHorizontal="19dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_btn"
+                        android:text="Test Sensor"
+                        android:textColor="#FFFFFF"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/msmedium"
+                        android:textSize="12sp"
+                        android:foreground="@drawable/btn_ripple_effect"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="2dp"
+                android:elevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Setting Robot"
+                        android:fontFamily="@font/msmedium" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="19dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Lebar Garis"
+                                android:layout_weight="1"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="@font/msmedium" />
+
+                            <EditText
+                                android:id="@+id/etLebarGaris"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12sp"
+                                android:hint="2"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:maxLength="4" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Jenis Motor"
+                                android:layout_weight="1"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="@font/msmedium" />
+
+                            <EditText
+                                android:id="@+id/etJenisMotor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12sp"
+                                android:hint="Gearbox"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="text"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="19dp"
+                        android:layout_gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="KP"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="@font/msmedium" />
+
+                            <EditText
+                                android:id="@+id/etKP"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12sp"
+                                android:hint="255"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:maxLength="4"
+                                android:paddingHorizontal="15dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginHorizontal="8dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="KD"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="@font/msmedium" />
+
+                            <EditText
+                                android:id="@+id/etKD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12sp"
+                                android:hint="255"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:maxLength="4"
+                                android:paddingHorizontal="15dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="8dp"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="KI"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="@font/msmedium" />
+
+                            <EditText
+                                android:id="@+id/etKI"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12sp"
+                                android:hint="255"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:maxLength="4"
+                                android:paddingHorizontal="15dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="19dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bandingkan Kiri"
+                                android:layout_weight="1"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="@font/msmedium" />
+
+                            <EditText
+                                android:id="@+id/etBandingkanKiri"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12sp"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:maxLength="4" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bandingkan Kanan"
+                                android:layout_weight="1"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="@font/msmedium" />
+
+                            <EditText
+                                android:id="@+id/etBandingkanKanan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="12sp"
+                                android:textColor="#777777"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/msmedium"
+                                android:background="@drawable/input_field"
+                                android:elevation="4dp"
+                                android:paddingVertical="5dp"
+                                android:layout_margin="4dp"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:maxLength="4" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginHorizontal="19dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_marginRight="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btnCancleCek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_marginVertical="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_btn"
+                                    android:layout_marginRight="5dp"
+                                    android:text="Cancle"
+                                    android:textColor="#FFFFFF"
+                                    android:textAllCaps="false"
+                                    android:fontFamily="@font/msmedium"
+                                    android:textSize="12sp"
+                                    android:foreground="@drawable/btn_ripple_effect"
+                                    android:clickable="true"
+                                    android:focusable="true" />
+
+                                <Button
+                                    android:id="@+id/btnEditCek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_marginVertical="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_btn"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="Edit"
+                                    android:textColor="#FFFFFF"
+                                    android:textAllCaps="false"
+                                    android:fontFamily="@font/msmedium"
+                                    android:textSize="12sp"
+                                    android:foreground="@drawable/btn_ripple_effect"
+                                    android:clickable="true"
+                                    android:focusable="true" />
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/btnSaveCek"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginVertical="4dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_btn"
+                                android:text="Save"
+                                android:textColor="#FFFFFF"
+                                android:textAllCaps="false"
+                                android:fontFamily="@font/msmedium"
+                                android:textSize="12sp"
+                                android:foreground="@drawable/btn_ripple_effect"
+                                android:clickable="true"
+                                android:focusable="true" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1.5"
+                            android:layout_marginLeft="5dp">
+
+                            <Button
+                                android:id="@+id/btnUploadProgramCek"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginVertical="4dp"
+                                android:background="@drawable/bg_btn"
+                                android:text="Upload\nProgram"
+                                android:textColor="#FFFFFF"
+                                android:textAllCaps="false"
+                                android:fontFamily="@font/msmedium"
+                                android:textSize="12sp"
+                                android:foreground="@drawable/btn_ripple_effect"
+                                android:clickable="true"
+                                android:focusable="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
