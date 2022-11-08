@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -116,7 +117,7 @@ public class login extends AppCompatActivity {
                                 }
                             })
                             .setActionTextColor(Color.parseColor("#0094EF"));
-                    if (getHardwareNavbarHeight() > 0 && findViewById(R.id.rlLoginLayout_potrait) != null){
+                    if (getHardwareNavbarHeight() > 0 && getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
                         Snackbar.SnackbarLayout sbParams = (Snackbar.SnackbarLayout) sb.getView();
                         sbParams.setPadding(50, 0, 50, getHardwareNavbarHeight());
                     }
@@ -132,7 +133,7 @@ public class login extends AppCompatActivity {
                                 }
                             })
                             .setActionTextColor(Color.parseColor("#AAA000"));
-                    if (getHardwareNavbarHeight() > 0 && findViewById(R.id.rlLoginLayout_potrait) != null){
+                    if (getHardwareNavbarHeight() > 0 && getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
                         Snackbar.SnackbarLayout sbParams = (Snackbar.SnackbarLayout) sb.getView();
                         sbParams.setPadding(50, 0, 50, getHardwareNavbarHeight());
                     }
@@ -311,7 +312,7 @@ public class login extends AppCompatActivity {
         popUpInputNewPassword.setContentView(R.layout.update_password_popup);
         ImageView ivClosePopUpPasswordUpdate = popUpInputNewPassword.findViewById(R.id.ivClosePopUpPasswordUpdate);
         etUpdatePassword = popUpInputNewPassword.findViewById(R.id.etUpdatePassword);
-        FloatingActionButton fabSubmitPasswordUpdate = popUpInputNewPassword.findViewById(R.id.fabSubmitPasswordUpdate);
+        Button btnSubmitPasswordUpdate = popUpInputNewPassword.findViewById(R.id.btnSubmitPasswordUpdate);
 
         etUpdatePassword.setText(lastInputText);
 
@@ -324,7 +325,7 @@ public class login extends AppCompatActivity {
             }
         });
 
-        fabSubmitPasswordUpdate.setOnClickListener(new View.OnClickListener() {
+        btnSubmitPasswordUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
@@ -353,7 +354,7 @@ public class login extends AppCompatActivity {
                                         }
                                     })
                                     .setActionTextColor(Color.parseColor("#AAA000"));
-                            if (getHardwareNavbarHeight() > 0 && findViewById(R.id.rlLoginLayout_potrait) != null){
+                            if (getHardwareNavbarHeight() > 0 && getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
                                 Snackbar.SnackbarLayout sbParams = (Snackbar.SnackbarLayout) sb.getView();
                                 sbParams.setPadding(50, 0, 50, getHardwareNavbarHeight());
                             }
@@ -392,7 +393,7 @@ public class login extends AppCompatActivity {
         etOtpBox3 = popUpVerifikasiOTP.findViewById(R.id.etOtpBox3);
         etOtpBox4 = popUpVerifikasiOTP.findViewById(R.id.etOtpBox4);
         etOtpBox5 = popUpVerifikasiOTP.findViewById(R.id.etOtpBox5);
-        FloatingActionButton fabSubmitOtp = popUpVerifikasiOTP.findViewById(R.id.fabSubmitOtp);
+        Button btnSubmitOtp = popUpVerifikasiOTP.findViewById(R.id.btnSubmitOtp);
 
         autoFillOtp();
 //            etOtpBox1.requestFocus();
@@ -448,7 +449,7 @@ public class login extends AppCompatActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
             @Override
             public void afterTextChanged(Editable editable) {
-                if(editable.length() > 0) fabSubmitOtp.requestFocus();
+                if(editable.length() > 0) btnSubmitOtp.requestFocus();
             }
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -515,7 +516,7 @@ public class login extends AppCompatActivity {
             }
         });
 
-        fabSubmitOtp.setOnClickListener(new View.OnClickListener() {
+        btnSubmitOtp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if((etOtpBox1.getText().toString()

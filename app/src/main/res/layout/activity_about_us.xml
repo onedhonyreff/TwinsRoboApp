@@ -102,6 +102,7 @@
                         android:src="@drawable/image_about_us_land"/>
 
                     <LinearLayout
+                        android:id="@+id/llLinkWebsite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -157,7 +158,20 @@
                             android:layout_height="100dp"
                             android:src="@drawable/logo_codepan_studio"
                             android:scaleType="fitCenter" />
+
                     </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvAppVersion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="@font/msmedium"
+                        android:justificationMode="inter_word"
+                        android:textAlignment="center"
+                        android:text="App Version:"/>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

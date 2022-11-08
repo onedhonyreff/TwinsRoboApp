@@ -58,12 +58,14 @@
                 android:focusable="true"
                 android:clickable="true"
                 android:visibility="visible" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/llTitlePopUp"
                 android:orientation="vertical"
-                android:paddingVertical="20dp"
-                android:layout_below="@id/llTitlePopUp">
+                android:paddingVertical="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -78,44 +80,45 @@
                         android:id="@+id/cvModulItem"
                         android:layout_width="match_parent"
                         android:layout_height="160dp"
-                        android:layout_weight="1"
-                        android:layout_columnWeight="1"
                         android:layout_rowWeight="1"
-                        app:cardElevation="6dp"
-                        app:cardCornerRadius="12dp"
+                        android:layout_columnWeight="1"
                         android:layout_margin="12dp"
-                        android:foreground="?android:attr/selectableItemBackground"
+                        android:layout_weight="1"
                         android:clickable="true"
-                        android:focusable="true">
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="6dp">
+
                         <LinearLayout
-                            android:orientation="vertical"
-                            android:paddingVertical="16dp"
-                            android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/bg_card_item">
+                            android:background="@drawable/bg_card_item"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingVertical="16dp">
 
                             <ImageView
                                 android:id="@+id/ivModulItemPembelian"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:scaleType="fitCenter"
                                 android:layout_marginHorizontal="20dp"
+                                android:layout_weight="1"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/robot1"
-                                android:layout_weight="1" />
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/robot1" />
 
                             <TextView
                                 android:id="@+id/tvTitleModulPembelian"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="20dp"
                                 android:layout_marginTop="12dp"
-                                android:textSize="12sp"
-                                android:textColor="#6f6f6f"
+                                android:fontFamily="@font/msmedium"
                                 android:text="Pemrograman Robot"
                                 android:textAlignment="center"
-                                android:fontFamily="@font/msmedium"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -129,44 +132,44 @@
                     android:id="@+id/tvPopupHargaPembelian"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
                     android:layout_marginHorizontal="30dp"
                     android:layout_marginVertical="10dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
+                    android:fontFamily="@font/mssemibold"
                     android:text="Rp. 99999 ,-"
-                    android:textColor="#36AAF4"
-                    android:textSize="15sp"
                     android:textAlignment="center"
-                    android:fontFamily="@font/mssemibold"/>
+                    android:textColor="#36AAF4"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
                     android:layout_marginHorizontal="30dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
+                    android:fontFamily="@font/mssemibold"
                     android:text="Klik tombol dibawah untuk membeli modul pembelajaran"
-                    android:textSize="10sp"
                     android:textAlignment="center"
-                    android:fontFamily="@font/mssemibold"/>
+                    android:textSize="10sp" />
 
                 <Button
                     android:id="@+id/btnPopupBeliPembelian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:paddingHorizontal="40dp"
                     android:layout_marginHorizontal="30dp"
                     android:background="@drawable/blue_selected"
-                    android:textColor="#FFFFFF"
-                    android:fontFamily="@font/msmedium"
-                    android:text="Buy Now"
-                    android:textSize="13sp"
-                    android:textAllCaps="false"
                     android:clickable="true"
                     android:focusable="true"
-                    android:foreground="@drawable/btn_ripple_effect_low_radius"/>
+                    android:fontFamily="@font/msmedium"
+                    android:foreground="@drawable/btn_ripple_effect_low_radius"
+                    android:paddingHorizontal="40dp"
+                    android:text="Buy Now"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp" />
             </LinearLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

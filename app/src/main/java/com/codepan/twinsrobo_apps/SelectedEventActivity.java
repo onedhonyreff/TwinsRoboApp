@@ -1,6 +1,8 @@
 package com.codepan.twinsrobo_apps;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -39,7 +41,7 @@ public class SelectedEventActivity extends AppCompatActivity {
     private LinearLayout llZoomPamfletDetail;
     private RelativeLayout rlBackgroundPointer;
     private Dialog pamfletZoom;
-    private FloatingActionButton fabLikeEvent;
+    private FloatingActionButton fabLikeEvent, fabShareEvent;
 
     private Boolean isFirstOpened = true, isLikedEvent = false;
     private String id_user;
@@ -64,6 +66,7 @@ public class SelectedEventActivity extends AppCompatActivity {
         btnCatDroneRaceDetail = findViewById(R.id.btnCatDroneRaceDetail);
         btnCatUnderWaterDetail = findViewById(R.id.btnCatUnderWaterDetail);
         fabLikeEvent = findViewById(R.id.fabLikeEvent);
+        fabShareEvent = findViewById(R.id.fabShareEvent);
 
         if(savedInstanceState != null){
             isFirstOpened = savedInstanceState.getBoolean("isFirstOpened");
@@ -132,7 +135,21 @@ public class SelectedEventActivity extends AppCompatActivity {
             }
         });
 
-        if(findViewById(R.id.llDetailLomba_Potrait) != null){
+        fabShareEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String semuaPesan = "https://www.codepan.twinsrobo.com/info_lomba/" +
+                        bundle.getString("id") +
+                        "\n\"" + bundle.getString("judul") + "\"\n" +
+                        "Berbagi tautan bermanfaat sesama teman dengan TwinsRobo App.";
+                Intent kirim = new Intent(Intent.ACTION_SEND);
+                kirim.setType("text/plain");
+                kirim.putExtra(Intent.EXTRA_TEXT, semuaPesan);
+                startActivity(kirim);
+            }
+        });
+
+        if(getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
             llZoomPamfletDetail = findViewById(R.id.llZoomPamfletDetail);
             rlBackgroundPointer = findViewById(R.id.rlBackgroundPointer);
             ivPointerToZoomPamfletDetail = findViewById(R.id.ivPointerToZoomPamfletDetail);

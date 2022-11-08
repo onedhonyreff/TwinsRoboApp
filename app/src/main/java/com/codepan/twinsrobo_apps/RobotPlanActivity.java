@@ -1,7 +1,9 @@
 package com.codepan.twinsrobo_apps;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +21,7 @@ public class RobotPlanActivity extends AppCompatActivity {
     private TextView tvPlanSelector, tvListLineNumberProgramPreview, tvListProgramPreview;
     private ImageView ivBackArrowRP;
     private LinearLayout llDecrementPlan, llIncrementPlan;
+    private Button btnUsePlan;
 
     private int planNumber = 1;
 
@@ -39,6 +42,7 @@ public class RobotPlanActivity extends AppCompatActivity {
         llIncrementPlan = findViewById(R.id.llIncrementPlan);
         tvListLineNumberProgramPreview = findViewById(R.id.tvListLineNumberProgramPreview);
         tvListProgramPreview = findViewById(R.id.tvListProgramPreview);
+        btnUsePlan = findViewById(R.id.btnUsePlan);
 
         myProgram = getResources().getStringArray(R.array.list_programs);
         showProgramPreview();
@@ -67,6 +71,17 @@ public class RobotPlanActivity extends AppCompatActivity {
                     return;
                 }
                 changePlaneNumber(true);
+            }
+        });
+
+        btnUsePlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("number_text", tvListLineNumberProgramPreview.getText().toString());
+                returnIntent.putExtra("program_text", tvListProgramPreview.getText().toString());
+                setResult(RESULT_OK, returnIntent);
+                finish();
             }
         });
 

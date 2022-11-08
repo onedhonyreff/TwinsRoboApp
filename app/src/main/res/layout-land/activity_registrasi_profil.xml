@@ -219,7 +219,7 @@
                                 android:id="@+id/rlMaleButton"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="@drawable/input_field"
+                                android:background="@drawable/blue_selected"
                                 android:layout_marginRight="8dp"
                                 android:layout_weight="1"
                                 android:foreground="@drawable/btn_ripple_effect_low_radius"
@@ -233,16 +233,17 @@
                                     android:layout_centerInParent="true"
                                     android:fontFamily="@font/msmedium"
                                     android:text="Pria"
+                                    android:drawableEnd="@drawable/ic_checklist"
                                     android:textAlignment="center"
                                     android:textSize="16dp"
-                                    android:textColor="#777777" />
+                                    android:textColor="@color/White"/>
                             </RelativeLayout>
 
                             <RelativeLayout
                                 android:id="@+id/rlFemaleButton"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="@drawable/input_field"
+                                android:background="@drawable/pink_selected"
                                 android:layout_marginLeft="8dp"
                                 android:layout_weight="1"
                                 android:foreground="@drawable/btn_ripple_effect_low_radius"
@@ -255,10 +256,11 @@
                                     android:layout_height="wrap_content"
                                     android:layout_centerInParent="true"
                                     android:fontFamily="@font/msmedium"
+                                    android:drawableEnd="@drawable/ic_checklist"
                                     android:text="Wanita"
                                     android:textAlignment="center"
                                     android:textSize="16dp"
-                                    android:textColor="#777777" />
+                                    android:textColor="@color/White"/>
                             </RelativeLayout>
                         </LinearLayout>
 

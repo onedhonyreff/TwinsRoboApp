@@ -3,6 +3,8 @@ package com.codepan.twinsrobo_apps;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -28,6 +30,7 @@ import com.codepan.twinsrobo_apps.APIs.RetroServer;
 import com.codepan.twinsrobo_apps.Adapters.AdapterInfoLomba;
 import com.codepan.twinsrobo_apps.Models.DataModelInfoLomba;
 import com.codepan.twinsrobo_apps.Models.ResponseModelInfoLomba;
+import com.codepan.twinsrobo_apps.OtherClass.DataHelper;
 
 import java.util.List;
 
@@ -74,8 +77,29 @@ public class InfoLombaRobotActivity extends AppCompatActivity implements View.On
         rlUnderWater = findViewById(R.id.rlCatUnderWater);
         tvCatAll = findViewById(R.id.tvCatAll);
 
-        Bundle bundle = getIntent().getExtras();
-        id_user = bundle.getString("id_user");
+        if(getIntent().getData() != null){
+            DataHelper mySessionDb = new DataHelper(InfoLombaRobotActivity.this);
+            Cursor res = mySessionDb.getLoginSession();
+            String dataIdEvent = getIntent().getData().getPath().split("/")[2];
+            String idUser = "";
+            double lastLogged = 4;
+            while (res.moveToNext()){
+                idUser = res.getString(1);
+                lastLogged = Double.parseDouble(res.getString(4));
+            }
+            if(res.getCount() == 0 || lastLogged > 3){
+                Toast.makeText(this, "Anda perlu login", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            else {
+                id_user = idUser;
+                Toast.makeText(this, "Mencoba untuk membuka event dengan ID " + dataIdEvent, Toast.LENGTH_SHORT).show();
+            }
+        }
+        else{
+            Bundle bundle = getIntent().getExtras();
+            id_user = bundle.getString("id_user");
+        }
 
         if(savedInstanceState != null){
             isZoomingPamflet = savedInstanceState.getBoolean("is_zooming_pamflet");
@@ -124,7 +148,7 @@ public class InfoLombaRobotActivity extends AppCompatActivity implements View.On
                         rvListInfoLomba.setLayoutManager(lmDataInfoLomba);
                         rvListInfoLomba.setAdapter(adDataInfoLomba);
                         adDataInfoLomba.notifyDataSetChanged();
-                        if(findViewById(R.id.llInfoLomba_Potrait) == null){
+                        if(getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                             lmDataInfoLomba = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
                             rvListInfoLomba.setLayoutManager(lmDataInfoLomba);
                             rvListInfoLomba.setAdapter(adDataInfoLomba);

@@ -10,23 +10,18 @@ public class ResponseModelUser {
     public int getKodeUser() {
         return kodeUser;
     }
-
     public void setKodeUser(int kodeUser) {
         this.kodeUser = kodeUser;
     }
-
     public String getPesanUser() {
         return pesanUser;
     }
-
     public void setPesanUser(String pesanUser) {
         this.pesanUser = pesanUser;
     }
-
     public List<DataModelUser> getDataUser() {
         return dataUser;
     }
-
     public void setDataUser(List<DataModelUser> dataUser) {
         this.dataUser = dataUser;
     }

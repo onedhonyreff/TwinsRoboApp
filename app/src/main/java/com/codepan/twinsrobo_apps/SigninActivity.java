@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -104,7 +105,7 @@ public class SigninActivity extends AppCompatActivity {
                     }
                 })
                 .setActionTextColor(Color.parseColor("#0094EF"));
-        if (getHardwareNavbarHeight() > 0 && findViewById(R.id.rlLayoutSignIn_potrait) != null){
+        if (getHardwareNavbarHeight() > 0 && getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
             Snackbar.SnackbarLayout sbParams = (Snackbar.SnackbarLayout) sbToast.getView();
             sbParams.setPadding(50, 0, 50, getHardwareNavbarHeight());
         }
@@ -154,12 +155,13 @@ public class SigninActivity extends AppCompatActivity {
         btnSignUp.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                startActivity(new Intent(SigninActivity.this, TryDayNightActivity.class));
+                startActivity(new Intent(SigninActivity.this, DemoActivity.class));
+//                startActivity(new Intent(SigninActivity.this, TryDayNightActivity.class));
                 return false;
             }
         });
 
-        if (findViewById(R.id.llSignUp_landscape) != null) {
+        if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             RequestOptions requestOptions = new RequestOptions();
             requestOptions.skipMemoryCache(true);
             requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE);
@@ -294,7 +296,7 @@ public class SigninActivity extends AppCompatActivity {
         etOtpBox3 = (EditText) popUpVerifikasiOTP.findViewById(R.id.etOtpBox3);
         etOtpBox4 = (EditText) popUpVerifikasiOTP.findViewById(R.id.etOtpBox4);
         etOtpBox5 = (EditText) popUpVerifikasiOTP.findViewById(R.id.etOtpBox5);
-        FloatingActionButton fabSubmitOtp = (FloatingActionButton) popUpVerifikasiOTP.findViewById(R.id.fabSubmitOtp);
+        Button btnSubmitOtp = (Button) popUpVerifikasiOTP.findViewById(R.id.btnSubmitOtp);
 
         autoFillOtp();
 //            etOtpBox1.requestFocus();
@@ -350,7 +352,7 @@ public class SigninActivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
             @Override
             public void afterTextChanged(Editable editable) {
-                if(editable.length() > 0) fabSubmitOtp.requestFocus();
+                if(editable.length() > 0) btnSubmitOtp.requestFocus();
             }
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -417,7 +419,7 @@ public class SigninActivity extends AppCompatActivity {
             }
         });
 
-        fabSubmitOtp.setOnClickListener(new View.OnClickListener() {
+        btnSubmitOtp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if((etOtpBox1.getText().toString()

@@ -110,6 +110,7 @@
                         android:layout_weight="1">
 
                         <LinearLayout
+                            android:id="@+id/llLinkWebsite"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
@@ -174,6 +175,18 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:layout_weight="1" />
                         </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvAppVersion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:layout_marginVertical="10dp"
+                            android:fontFamily="@font/msmedium"
+                            android:justificationMode="inter_word"
+                            android:textAlignment="center"
+                            android:text="App Version:"/>
+
                     </LinearLayout>
 
                 </LinearLayout>

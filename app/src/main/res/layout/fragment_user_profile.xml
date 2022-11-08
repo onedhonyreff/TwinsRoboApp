@@ -129,7 +129,7 @@
                                     android:layout_width="55dp"
                                     android:layout_height="wrap_content"
                                     android:adjustViewBounds="true"
-                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentLeft="true"
                                     android:layout_alignParentBottom="true"
                                     android:src="@drawable/vip_badge2"
                                     android:visibility="invisible"/>
@@ -140,35 +140,14 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="2">
-
-                                <LinearLayout
-                                    android:id="@+id/llEditProfile"
+                                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                    android:id="@+id/fabEditProfile"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
                                     android:layout_alignParentTop="true"
-                                    android:layout_alignParentRight="true"
-                                    android:padding="5dp"
-                                    android:foreground="?attr/selectableItemBackground"
-                                    android:focusable="true"
-                                    android:clickable="true">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#0094EF"
-                                        android:text="Edit"
-                                        android:layout_gravity="center"
-                                        android:fontFamily="@font/mssemibold"
-                                        android:textSize="15sp" />
-
-                                    <ImageView
-                                        android:layout_width="25dp"
-                                        android:layout_height="wrap_content"
-                                        android:adjustViewBounds="true"
-                                        android:layout_marginLeft="5dp"
-                                        android:src="@drawable/ic_edit" />
-                                </LinearLayout>
+                                    android:layout_alignParentEnd="true"
+                                    app:fabSize="mini"
+                                    android:src="@drawable/ic_edit"/>
                             </RelativeLayout>
                         </LinearLayout>
 

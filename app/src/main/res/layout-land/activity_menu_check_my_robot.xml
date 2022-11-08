@@ -192,7 +192,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Maju"
-                                android:fontFamily="@font/msmedium" />
+                                android:textSize="12sp"
+                                android:fontFamily="@font/msmedium"
+                                android:textAlignment="center"
+                                android:background="@drawable/custom_radio_selector"
+                                android:textColor="@drawable/custom_radio_text_selector"
+                                android:button="@color/zxing_transparent"
+                                android:padding="10dp"
+                                android:layout_margin="5dp"
+                                android:elevation="4dp"/>
 
                             <RadioButton
                                 android:id="@+id/rbMundur"
@@ -200,7 +208,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Mundur"
-                                android:fontFamily="@font/msmedium" />
+                                android:textSize="12sp"
+                                android:fontFamily="@font/msmedium"
+                                android:textAlignment="center"
+                                android:background="@drawable/custom_radio_selector"
+                                android:textColor="@drawable/custom_radio_text_selector"
+                                android:button="@color/zxing_transparent"
+                                android:padding="10dp"
+                                android:layout_margin="5dp"
+                                android:elevation="4dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -216,7 +232,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Putar Kiri"
-                                android:fontFamily="@font/msmedium" />
+                                android:textSize="12sp"
+                                android:fontFamily="@font/msmedium"
+                                android:textAlignment="center"
+                                android:background="@drawable/custom_radio_selector"
+                                android:textColor="@drawable/custom_radio_text_selector"
+                                android:button="@color/zxing_transparent"
+                                android:padding="10dp"
+                                android:layout_margin="5dp"
+                                android:elevation="4dp"/>
 
                             <RadioButton
                                 android:id="@+id/rbPutarKanan"
@@ -224,7 +248,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Putar Kanan"
-                                android:fontFamily="@font/msmedium" />
+                                android:textSize="12sp"
+                                android:fontFamily="@font/msmedium"
+                                android:textAlignment="center"
+                                android:background="@drawable/custom_radio_selector"
+                                android:textColor="@drawable/custom_radio_text_selector"
+                                android:button="@color/zxing_transparent"
+                                android:padding="10dp"
+                                android:layout_margin="5dp"
+                                android:elevation="4dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -240,7 +272,19 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Diam"
-                                android:fontFamily="@font/msmedium" />
+                                android:textSize="12sp"
+                                android:fontFamily="@font/msmedium"
+                                android:textAlignment="center"
+                                android:background="@drawable/custom_radio_selector"
+                                android:textColor="@drawable/custom_radio_text_selector"
+                                android:button="@color/zxing_transparent"
+                                android:padding="10dp"
+                                android:layout_margin="5dp"
+                                android:elevation="4dp"/>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
                         </LinearLayout>
 
                         <Button

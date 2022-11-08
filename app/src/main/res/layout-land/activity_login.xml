@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlLoginLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_app_land"
-    tools:context=".login"
-    android:id="@+id/rlLoginLayout">
+    tools:context=".login">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,10 +16,10 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:paddingHorizontal="70dp"
-            android:paddingVertical="20dp"
-            android:layout_weight="1">
+            android:paddingVertical="20dp">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -29,64 +29,64 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="#FFFFFF"
-                        android:text="Welcome To"
-                        android:textAlignment="center"
-                        android:textSize="18sp"
-                        android:lineHeight="38sp"
-                        android:textStyle="normal"
-                        android:fontFamily="@font/mssemibold"
-                        android:layout_gravity="center" />
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textColor="#CFEAFB"
+                        android:fontFamily="@font/mssemibold"
+                        android:lineHeight="38sp"
+                        android:text="Welcome To"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/mssemibold"
+                        android:lineHeight="38sp"
                         android:text="Twins Robo Apps"
                         android:textAlignment="center"
+                        android:textColor="#CFEAFB"
                         android:textSize="25sp"
-                        android:lineHeight="38sp"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/mssemibold"
-                        android:layout_marginBottom="20dp" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#FFFFFF"
                         android:fontFamily="@font/mssemibold"
+                        android:lineHeight="17sp"
                         android:text="Your Login Or Email"
-                        android:textSize="14sp"
-                        android:lineHeight="17sp" />
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
 
                     <EditText
                         android:id="@+id/etLoginEmail"
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
-                        android:background="@drawable/input_field"
-                        android:textSize="16sp"
-                        android:inputType="text"
                         android:layout_marginTop="4dp"
                         android:layout_marginBottom="23dp"
+                        android:background="@drawable/input_field"
+                        android:fontFamily="@font/msmedium"
+                        android:inputType="text"
                         android:maxLines="1"
                         android:textColor="#777777"
-                        android:fontFamily="@font/msmedium" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#FFFFFF"
                         android:fontFamily="@font/mssemibold"
+                        android:lineHeight="17sp"
                         android:text="Password"
-                        android:textSize="14sp"
-                        android:lineHeight="17sp" />
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -97,42 +97,42 @@
                             android:id="@+id/etLoginPass"
                             android:layout_width="match_parent"
                             android:layout_height="38dp"
-                            android:background="@drawable/input_field"
-                            android:textSize="16sp"
-                            android:inputType="textPassword"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="23dp"
+                            android:background="@drawable/input_field"
+                            android:fontFamily="@font/msmedium"
+                            android:inputType="textPassword"
                             android:maxLines="1"
                             android:textColor="#888888"
-                            android:fontFamily="@font/msmedium" />
+                            android:textSize="16sp" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
                         android:id="@+id/toSolvePassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/msmedium"
+                        android:lineHeight="13sp"
                         android:text="Forgot the password? Solve here"
+                        android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="11sp"
-                        android:textAlignment="center"
-                        android:lineHeight="13sp"
-                        android:fontFamily="@font/msmedium"
                         android:textStyle="normal" />
 
                     <Button
                         android:id="@+id/btnLogin"
                         android:layout_width="161dp"
                         android:layout_height="27dp"
+                        android:layout_gravity="center"
                         android:layout_marginTop="18dp"
                         android:background="@drawable/bg_btn_primary"
-                        android:layout_gravity="center"
-                        android:text="Login"
-                        android:fontFamily="@font/mssemibold"
-                        android:textAllCaps="false"
-                        android:textColor="#36AAF4"
-                        android:foreground="@drawable/btn_ripple_effect"
                         android:clickable="true"
-                        android:focusable="true" />
+                        android:focusable="true"
+                        android:fontFamily="@font/mssemibold"
+                        android:foreground="@drawable/btn_ripple_effect"
+                        android:text="Login"
+                        android:textAllCaps="false"
+                        android:textColor="#36AAF4" />
 
                 </LinearLayout>
             </ScrollView>
@@ -149,9 +149,9 @@
                 android:id="@+id/ivIconHello"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:layout_marginHorizontal="50dp"
                 android:adjustViewBounds="true"
-                android:layout_centerInParent="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/hello" />
         </RelativeLayout>
@@ -162,18 +162,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/bg_left_rounded_button"
         android:layout_gravity="center"
-        android:text="Daftar"
-        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_left_rounded_button"
+        android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/mssemibold"
+        android:foreground="@drawable/btn_ripple_effect_left_rounded"
+        android:paddingLeft="10dp"
+        android:text="Daftar"
         android:textAllCaps="false"
         android:textColor="#36AAF4"
-        android:foreground="@drawable/btn_ripple_effect_left_rounded"
-        android:clickable="true"
-        android:focusable="true" />
+        android:textSize="15sp" />
 
     <ProgressBar
         android:id="@+id/pbLogin"
@@ -182,5 +182,5 @@
         android:layout_centerInParent="true"
         android:indeterminateDrawable="@drawable/custom_progress_bar_4"
         android:indeterminateDuration="@integer/material_motion_duration_long_2"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 </RelativeLayout>

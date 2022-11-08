@@ -7,7 +7,7 @@
     android:background="@drawable/bg_app"
     android:paddingVertical="20dp"
     tools:context=".login"
-    android:id="@+id/rlLoginLayout_potrait">
+    android:id="@+id/rlLoginLayout">
 
     <Button
         android:id="@+id/toSignUp"

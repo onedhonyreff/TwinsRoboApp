@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -44,6 +45,7 @@ import com.codepan.twinsrobo_apps.Models.ResponseModelUser;
 import com.codepan.twinsrobo_apps.OtherClass.EncodeDecodeImage;
 import com.codepan.twinsrobo_apps.OtherClass.ListAvatar;
 import com.codepan.twinsrobo_apps.OtherClass.StringDateFormat;
+import com.codepan.twinsrobo_apps.databinding.ActivityEditProfileBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
@@ -77,13 +79,8 @@ public class EditProfileActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener date;
     private ProgressBar pbProfileEdit;
 
-    private RelativeLayout rlDeletePhotoOnFrame, rlOpenGallery, rlOpenAvatar, rlEditMaleButton, rlEditFemaleButton;
-    private FloatingActionButton fabEditFotoPicker;
-    private ImageView ivBackArrowPL, ivEditDatePicker, ivEditPhotoFrame, ivClosePopUpPhotoPicker, ivClosePopUpAvatarPicker, ivEditPhotoFrameInvisible;
-    private EditText etEditTanggalLahir, etEditEmail, etEditUsername, etEditNamaDepan, etEditNamaBelakang, etEditNamaSekolah, etPassEdit;
-    private TextView tvEditMaleButton, tvEditFemaleButton;
-    private Button btnSaveEdit;
-    private CheckBox cbShowPasswordEdit;
+    private RelativeLayout rlDeletePhotoOnFrame, rlOpenGallery, rlOpenAvatar;
+    private ImageView ivClosePopUpPhotoPicker, ivClosePopUpAvatarPicker;
 
     private RecyclerView rvAvatarPicker;
     private List<Integer> imageAvatar;
@@ -94,30 +91,15 @@ public class EditProfileActivity extends AppCompatActivity {
     private boolean showingDialog = false, showingAvatarDialog = false, photoWasModified = false, isFirstOpened = true;
     private String fotoFrameMode = "Foto", gender = "Male", idUser, linkFoto, uriFoto;
 
+    private ActivityEditProfileBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        binding = ActivityEditProfileBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         pbProfileEdit = findViewById(R.id.pbProfileEdit);
-        ivBackArrowPL = findViewById(R.id.ivBackArrowPL);
-        ivEditDatePicker = findViewById(R.id.ivEditDatePicker);
-        etEditTanggalLahir = findViewById(R.id.etEditTanggalLahir);
-        ivEditPhotoFrame = findViewById(R.id.ivEditPhotoFrame);
-        ivEditPhotoFrameInvisible = findViewById(R.id.ivEditPhotoFrameInvisible);
-        fabEditFotoPicker = findViewById(R.id.fabEditFotoPicker);
-        etEditEmail = findViewById(R.id.etEditEmail);
-        etEditUsername = findViewById(R.id.etEditUsername);
-        etEditNamaDepan = findViewById(R.id.etEditNamaDepan);
-        etEditNamaBelakang = findViewById(R.id.etEditNamaBelakang);
-        etEditNamaSekolah = findViewById(R.id.etEditNamaSekolah);
-        tvEditMaleButton = findViewById(R.id.tvEditMaleButton);
-        tvEditFemaleButton = findViewById(R.id.tvEditFemaleButton);
-        rlEditMaleButton = findViewById(R.id.rlEditMaleButton);
-        rlEditFemaleButton = findViewById(R.id.rlEditFemaleButton);
-        btnSaveEdit = findViewById(R.id.btnSaveEdit);
-        etPassEdit = findViewById(R.id.etPassEdit);
-        cbShowPasswordEdit = findViewById(R.id.cbShowPasswordEdit);
         myCalendar = Calendar.getInstance();
 
         if (savedInstanceState != null) {
@@ -132,24 +114,24 @@ public class EditProfileActivity extends AppCompatActivity {
             uriFoto = savedInstanceState.getString("uriFoto");
             idUser = savedInstanceState.getString("idUser");
 
-            etEditUsername.setText(savedInstanceState.getString("editUsername"));
-            etEditNamaDepan.setText(savedInstanceState.getString("editNamaDepan"));
-            etEditNamaBelakang.setText(savedInstanceState.getString("editNamaBelakang"));
-            etEditTanggalLahir.setText(savedInstanceState.getString("editTanggalLahir"));
-            etEditNamaSekolah.setText(savedInstanceState.getString("editNamaSekolah"));
-            etEditEmail.setText(savedInstanceState.getString("editEmail"));
-            etPassEdit.setText(savedInstanceState.getString("editPasswordCek"));
+            binding.etEditUsername.setText(savedInstanceState.getString("editUsername"));
+            binding.etEditNamaDepan.setText(savedInstanceState.getString("editNamaDepan"));
+            binding.etEditNamaBelakang.setText(savedInstanceState.getString("editNamaBelakang"));
+            binding.etEditTanggalLahir.setText(savedInstanceState.getString("editTanggalLahir"));
+            binding.etEditNamaSekolah.setText(savedInstanceState.getString("editNamaSekolah"));
+            binding.etEditEmail.setText(savedInstanceState.getString("editEmail"));
+            binding.etPassEdit.setText(savedInstanceState.getString("editPasswordCek"));
         }
         else {
             Bundle extras = getIntent().getExtras();
             idUser = extras.getString("id");
-            etEditUsername.setText(extras.getString("username"));
-            etEditNamaDepan.setText(extras.getString("namaDepan"));
-            etEditNamaBelakang.setText(extras.getString("namaBelakang"));
-            etEditNamaSekolah.setText(extras.getString("namaSekolah"));
-            etEditEmail.setText(extras.getString("email"));
+            binding.etEditUsername.setText(extras.getString("username"));
+            binding.etEditNamaDepan.setText(extras.getString("namaDepan"));
+            binding.etEditNamaBelakang.setText(extras.getString("namaBelakang"));
+            binding.etEditNamaSekolah.setText(extras.getString("namaSekolah"));
+            binding.etEditEmail.setText(extras.getString("email"));
             gender = extras.getString("gender");
-            etEditTanggalLahir.setText(new StringDateFormat().getStringDate2(extras.getString("tglLahir")));
+            binding.etEditTanggalLahir.setText(new StringDateFormat().getStringDate2(extras.getString("tglLahir")));
             linkFoto = extras.getString("linkFoto");
 
             if(linkFoto.length() > 15){
@@ -175,11 +157,11 @@ public class EditProfileActivity extends AppCompatActivity {
                 String formatTanggal = "dd-MMMM-yyyy";
                 SimpleDateFormat sdf = new SimpleDateFormat(formatTanggal, Locale.US);
 
-                etEditTanggalLahir.setText(sdf.format(myCalendar.getTime()));
+                binding.etEditTanggalLahir.setText(sdf.format(myCalendar.getTime()));
             }
         };
 
-        ivEditDatePicker.setOnClickListener(new View.OnClickListener() {
+        binding.ivEditDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(EditProfileActivity.this, date,
@@ -220,21 +202,21 @@ public class EditProfileActivity extends AppCompatActivity {
 //        };
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-        ivBackArrowPL.setOnClickListener(new View.OnClickListener() {
+        binding.ivBackArrowPL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
 
-        fabEditFotoPicker.setOnClickListener(new View.OnClickListener() {
+        binding.fabEditFotoPicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showPhotoPickerDialog();
             }
         });
 
-        rlEditMaleButton.setOnClickListener(new View.OnClickListener() {
+        binding.rlEditMaleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (gender != "Male") {
@@ -247,7 +229,7 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
 
-        rlEditFemaleButton.setOnClickListener(new View.OnClickListener() {
+        binding.rlEditFemaleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (gender != "Female") {
@@ -260,20 +242,20 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
 
-        cbShowPasswordEdit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        binding.cbShowPasswordEdit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (cbShowPasswordEdit.isChecked()) {
-                    etPassEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
-                } else if (!cbShowPasswordEdit.isChecked()) {
-                    etPassEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                if (binding.cbShowPasswordEdit.isChecked()) {
+                    binding.etPassEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+                } else if (!binding.cbShowPasswordEdit.isChecked()) {
+                    binding.etPassEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 }
                 Typeface typeFace = ResourcesCompat.getFont(EditProfileActivity.this, R.font.msmedium);
-                etPassEdit.setTypeface(typeFace);
+                binding.etPassEdit.setTypeface(typeFace);
             }
         });
 
-        btnSaveEdit.setOnClickListener(new View.OnClickListener() {
+        binding.btnSaveEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -281,15 +263,15 @@ public class EditProfileActivity extends AppCompatActivity {
                     isProcess(true);
                     APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);
                     Call<ResponseModelUser> requestUpdate = ardData.ardUpdateUser(idUser,
-                                                                                    etEditUsername.getText().toString(),
-                                                                                    etEditEmail.getText().toString(),
-                                                                                    etEditNamaDepan.getText().toString(),
-                                                                                    etEditNamaBelakang.getText().toString(),
-                                                                                    gender,
-                                                                                    new StringDateFormat().getStringDate(etEditTanggalLahir.getText().toString()),
-                                                                                    etEditNamaSekolah.getText().toString(),
-                                                                                    howUpdatePhoto(),
-                                                                                    etPassEdit.getText().toString());
+                            binding.etEditUsername.getText().toString(),
+                            binding.etEditEmail.getText().toString(),
+                            binding.etEditNamaDepan.getText().toString(),
+                            binding.etEditNamaBelakang.getText().toString(),
+                            gender,
+                            new StringDateFormat().getStringDate(binding.etEditTanggalLahir.getText().toString()),
+                            binding.etEditNamaSekolah.getText().toString(),
+                            howUpdatePhoto(),
+                            binding.etPassEdit.getText().toString());
                     requestUpdate.enqueue(new Callback<ResponseModelUser>() {
                         @Override
                         public void onResponse(Call<ResponseModelUser> call, Response<ResponseModelUser> response) {
@@ -388,7 +370,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         adapterAvatarEdit = new AdapterAvatarEdit(this, imageAvatar);
 
-        if (popUpAvatarDialog.findViewById(R.id.llAvatarPallete_Potrait) != null) {
+        if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             columnCount = 3;
         } else {
             columnCount = 4;
@@ -421,7 +403,7 @@ public class EditProfileActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(R.drawable.ic_account_circle2)
                 .apply(RequestOptions.circleCropTransform())
-                .into(ivEditPhotoFrame);
+                .into(binding.ivEditPhotoFrame);
         fotoFrameMode = "Kosong";
         genderSelected();
     }
@@ -456,7 +438,7 @@ public class EditProfileActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(listAvatar.getAvatar(gender, indexAvatarImage))
                 .apply(RequestOptions.circleCropTransform())
-                .into(ivEditPhotoFrame);
+                .into(binding.ivEditPhotoFrame);
 
         genderSelected();
         fotoFrameMode = "Avatar";
@@ -465,15 +447,11 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private void genderSelected() {
         if (gender.equals("Male")) {
-            rlEditMaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.blue_selected));
-            tvEditMaleButton.setTextColor(ContextCompat.getColor(this, R.color.colorwhite));
-            rlEditFemaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field));
-            tvEditFemaleButton.setTextColor(ContextCompat.getColor(this, R.color.colornormaltext));
+            binding.rlEditMaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.blue_selected));
+            binding.rlEditFemaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.gender_selector));
         } else {
-            rlEditFemaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.pink_selected));
-            tvEditFemaleButton.setTextColor(ContextCompat.getColor(this, R.color.colorwhite));
-            rlEditMaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field));
-            tvEditMaleButton.setTextColor(ContextCompat.getColor(this, R.color.colornormaltext));
+            binding.rlEditFemaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.pink_selected));
+            binding.rlEditMaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.gender_selector));
         }
     }
 
@@ -486,7 +464,7 @@ public class EditProfileActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
                 uriFoto = resultUri.toString();
-                ivEditPhotoFrame.setImageURI(resultUri);
+                binding.ivEditPhotoFrame.setImageURI(resultUri);
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), resultUri);
                     fotoFrameMode = "Foto";
@@ -503,7 +481,7 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     private void saveImage(String withUpdating) throws IOException {
-        drawableState = (BitmapDrawable) ivEditPhotoFrame.getDrawable();
+        drawableState = (BitmapDrawable) binding.ivEditPhotoFrame.getDrawable();
         bitmapState = drawableState.getBitmap();
 
         FileOutputStream outputStream = null;
@@ -530,19 +508,19 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     private boolean isIncompleteForm() {
-        if (etEditUsername.getText().toString().trim().isEmpty()) etEditUsername.setError("Wajib Diisi");
-        if (etEditEmail.getText().toString().trim().isEmpty()) etEditEmail.setError("Wajib Diisi");
-        if (etEditNamaDepan.getText().toString().trim().isEmpty()) etEditNamaDepan.setError("Wajib Diisi");
-        if (etEditNamaBelakang.getText().toString().trim().isEmpty()) etEditNamaBelakang.setError("Wajib Diisi");
-        if (etEditNamaSekolah.getText().toString().trim().isEmpty()) etEditNamaSekolah.setError("Wajib Diisi");
-        if (etPassEdit.getText().toString().trim().isEmpty()) etPassEdit.setError("Wajib Diisi");
+        if (binding.etEditUsername.getText().toString().trim().isEmpty()) binding.etEditUsername.setError("Wajib Diisi");
+        if (binding.etEditEmail.getText().toString().trim().isEmpty()) binding.etEditEmail.setError("Wajib Diisi");
+        if (binding.etEditNamaDepan.getText().toString().trim().isEmpty()) binding.etEditNamaDepan.setError("Wajib Diisi");
+        if (binding.etEditNamaBelakang.getText().toString().trim().isEmpty()) binding.etEditNamaBelakang.setError("Wajib Diisi");
+        if (binding.etEditNamaSekolah.getText().toString().trim().isEmpty()) binding.etEditNamaSekolah.setError("Wajib Diisi");
+        if (binding.etPassEdit.getText().toString().trim().isEmpty()) binding.etPassEdit.setError("Wajib Diisi");
 
-        if (etEditUsername.getText().toString().trim().isEmpty()) return true;
-        if (etEditEmail.getText().toString().trim().isEmpty()) return true;
-        if (etEditNamaDepan.getText().toString().trim().isEmpty()) return true;
-        if (etEditNamaBelakang.getText().toString().trim().isEmpty()) return true;
-        if (etEditNamaSekolah.getText().toString().trim().isEmpty()) return true;
-        if (etPassEdit.getText().toString().trim().isEmpty()) return true;
+        if (binding.etEditUsername.getText().toString().trim().isEmpty()) return true;
+        if (binding.etEditEmail.getText().toString().trim().isEmpty()) return true;
+        if (binding.etEditNamaDepan.getText().toString().trim().isEmpty()) return true;
+        if (binding.etEditNamaBelakang.getText().toString().trim().isEmpty()) return true;
+        if (binding.etEditNamaSekolah.getText().toString().trim().isEmpty()) return true;
+        if (binding.etPassEdit.getText().toString().trim().isEmpty()) return true;
         return false;
     }
 
@@ -551,7 +529,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         if(photoWasModified){
             if(fotoFrameMode.equals("Foto")){
-                drawableState = (BitmapDrawable) ivEditPhotoFrameInvisible.getDrawable();
+                drawableState = (BitmapDrawable) binding.ivEditPhotoFrameInvisible.getDrawable();
                 bitmapState = drawableState.getBitmap();
                 strFoto = new EncodeDecodeImage().getStringImage(bitmapState);
             }
@@ -608,8 +586,8 @@ public class EditProfileActivity extends AppCompatActivity {
                         .load(Uri.parse(uriFoto))
                         .apply(RequestOptions.circleCropTransform())
                         .apply(requestOptions)
-                        .into(ivEditPhotoFrame);
-                ivEditPhotoFrameInvisible.setImageURI(Uri.parse(uriFoto));
+                        .into(binding.ivEditPhotoFrame);
+                binding.ivEditPhotoFrameInvisible.setImageURI(Uri.parse(uriFoto));
 //                Glide.with(this)
 //                        .load(new File(Environment.getExternalStorageDirectory(), PATH_FILE_IMAGE_STATE + "ImageState.jpg"))
 //                        .apply(RequestOptions.circleCropTransform())
@@ -626,7 +604,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         .load(linkFoto)
                         .apply(RequestOptions.circleCropTransform())
                         .apply(requestOptions)
-                        .into(ivEditPhotoFrame);
+                        .into(binding.ivEditPhotoFrame);
             }
 
             genderSelected();
@@ -655,12 +633,12 @@ public class EditProfileActivity extends AppCompatActivity {
         outState.putString("uriFoto", uriFoto);
 
         outState.putString("idUser", idUser);
-        outState.putString("editUsername", etEditUsername.getText().toString());
-        outState.putString("editNamaDepan", String.valueOf(etEditNamaDepan));
-        outState.putString("editNamaBelakang", String.valueOf(etEditNamaBelakang));
-        outState.putString("editTanggalLahir", String.valueOf(etEditTanggalLahir));
-        outState.putString("editNamaSekolah", String.valueOf(etEditNamaSekolah));
-        outState.putString("editEmail", String.valueOf(etEditEmail));
-        outState.putString("editPasswordCek", String.valueOf(etPassEdit));
+        outState.putString("editUsername", binding.etEditUsername.getText().toString());
+        outState.putString("editNamaDepan", String.valueOf(binding.etEditNamaDepan));
+        outState.putString("editNamaBelakang", String.valueOf(binding.etEditNamaBelakang));
+        outState.putString("editTanggalLahir", String.valueOf(binding.etEditTanggalLahir));
+        outState.putString("editNamaSekolah", String.valueOf(binding.etEditNamaSekolah));
+        outState.putString("editEmail", String.valueOf(binding.etEditEmail));
+        outState.putString("editPasswordCek", String.valueOf(binding.etPassEdit));
     }
 }

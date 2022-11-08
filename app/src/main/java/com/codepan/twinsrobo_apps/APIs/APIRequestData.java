@@ -1,17 +1,40 @@
 package com.codepan.twinsrobo_apps.APIs;
 
+import com.codepan.twinsrobo_apps.Models.ServerResponse;
 import com.codepan.twinsrobo_apps.Models.ResponseModelInfoLomba;
 import com.codepan.twinsrobo_apps.Models.ResponseModelLogin;
 import com.codepan.twinsrobo_apps.Models.ResponseModelUser;
 import com.codepan.twinsrobo_apps.Models.ResponseModelWishlist;
 
+import java.util.Map;
+
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PartMap;
 
 public interface APIRequestData {
+
+    @FormUrlEncoded
+    @POST("retrieve_user.php")
+    Call<ResponseModelUser> ardRetrieveUser(
+            @Field("id_user") String id_user
+    );
+
+    // OTHER CONNECTIONS
+
+    @Multipart
+    @POST("upload_video.php")
+    Call<ServerResponse> upload(
+            @Header("Authorization") String authorization,
+            @PartMap Map<String, RequestBody> map
+    );
+
     @GET("retrieve_info_lomba.php")
     Call<ResponseModelInfoLomba> ardRetrieveDataInfoLomba();
 
@@ -48,12 +71,6 @@ public interface APIRequestData {
             @Field("tanggal_lahir") String tanggal_lahir,
             @Field("nama_sekolah") String nama_sekolah,
             @Field("string_foto") String string_foto
-    );
-
-    @FormUrlEncoded
-    @POST("retrieve_user.php")
-    Call<ResponseModelUser> ardRetrieveUser(
-            @Field("id_user") String id_user
     );
 
     @FormUrlEncoded

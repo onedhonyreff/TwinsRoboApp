@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/navBtnMember"
         android:icon="@drawable/ic_groups"
         android:title="Member" />
-
     <item
         android:id="@+id/navBtnHome"
         android:icon="@drawable/ic_home"
         android:title="Home" />
-
     <item
         android:id="@+id/navBtnAccount"
         android:icon="@drawable/ic_person"
         android:title="Account" />
-
 </menu>

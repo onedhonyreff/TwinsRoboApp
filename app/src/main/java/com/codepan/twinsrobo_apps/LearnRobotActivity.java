@@ -2,6 +2,7 @@ package com.codepan.twinsrobo_apps;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -119,7 +120,7 @@ public class LearnRobotActivity extends AppCompatActivity {
         }
 
         adDataModul = new AdapterModul(LearnRobotActivity.this, dataModul);
-        if(findViewById(R.id.llLearnRobot_Landscape) == null){
+        if(getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
             lmDataModul = new GridLayoutManager(LearnRobotActivity.this, 2);
         }
         else {
@@ -175,7 +176,6 @@ public class LearnRobotActivity extends AppCompatActivity {
 
     private void filterModul(String text){
         ArrayList<DataModelModul> filteredModul = new ArrayList<>();
-
         for (DataModelModul item : dataModul){
             if (item.getModul_title().toLowerCase().contains(text.toLowerCase())){
                 filteredModul.add(item);

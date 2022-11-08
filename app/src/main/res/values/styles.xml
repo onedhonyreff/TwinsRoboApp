@@ -11,6 +11,10 @@
 <!--        <item name="android:windowContentOverlay">@null</item>-->
 <!--        <item name="android:fitsSystemWindows">false</item>-->
     </style>
+    
+    <style name="AppTheme.CustomNavigationBar">
+        <item name="android:navigationBarColor">@color/SysNavBacground</item>
+    </style>
 
     <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
         <item name="fontFamily">@font/msmedium</item>

@@ -38,6 +38,7 @@ import com.codepan.twinsrobo_apps.OtherInterfaces.FragActCommunication;
 import com.codepan.twinsrobo_apps.R;
 import com.codepan.twinsrobo_apps.ScannerActivity;
 import com.codepan.twinsrobo_apps.login;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -58,7 +59,8 @@ public class UserProfileFragment extends Fragment {
 
     private View thisFragment;
 
-    private LinearLayout llEditProfil, llSuccessLoadProfil, llFailLoadProfil, llLogOut;
+    private FloatingActionButton fabEditProfile;
+    private LinearLayout llSuccessLoadProfil, llFailLoadProfil, llLogOut;
     private ImageView ivFotoProfil, ivIconGenderProfil, ivFailImageProfil, ivVipBadge, ivQrCodeUser;
     private TextView tvNamaProfil, tvNamaSekolahProfil, tvUsernameProfil, tvEmailProfil, tvAgeProfil, tvGenderProfil;
     private ProgressBar pbProfil;
@@ -93,7 +95,7 @@ public class UserProfileFragment extends Fragment {
 
         llSuccessLoadProfil = thisFragment.findViewById(R.id.llSuccessLoadProfil);
         llFailLoadProfil = thisFragment.findViewById(R.id.llFailLoadProfil);
-        llEditProfil = thisFragment.findViewById(R.id.llEditProfile);
+        fabEditProfile = thisFragment.findViewById(R.id.fabEditProfile);
         llLogOut = thisFragment.findViewById(R.id.llLogOut);
         ivFotoProfil = thisFragment.findViewById(R.id.ivFotoProfil);
         ivVipBadge = thisFragment.findViewById(R.id.ivVipBadge);
@@ -166,17 +168,10 @@ public class UserProfileFragment extends Fragment {
             pbProfil.setVisibility(View.VISIBLE);
             APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);
             Call<ResponseModelUser> requestUserData = ardData.ardRetrieveUser(bundle.getString("id_user"));
-
             requestUserData.enqueue(new Callback<ResponseModelUser>() {
                 @Override
                 public void onResponse(Call<ResponseModelUser> call, Response<ResponseModelUser> response) {
-
-                    pbProfil.setVisibility(View.GONE);
-                    llSuccessLoadProfil.setVisibility(View.VISIBLE);
-                    llFailLoadProfil.setVisibility(View.GONE);
-
                     if(response.body().getKodeUser() == 1){
-
                         List<DataModelUser> listData = response.body().getDataUser();
                         DataModelUser dmu = listData.get(0);
 
@@ -200,7 +195,6 @@ public class UserProfileFragment extends Fragment {
                     }
                     pbProfil.setVisibility(View.GONE);
                 }
-
                 @Override
                 public void onFailure(Call<ResponseModelUser> call, Throwable t) {
                     pbProfil.setVisibility(View.GONE);
@@ -211,7 +205,7 @@ public class UserProfileFragment extends Fragment {
             });
         }
 
-        llEditProfil.setOnClickListener(new View.OnClickListener() {
+        fabEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

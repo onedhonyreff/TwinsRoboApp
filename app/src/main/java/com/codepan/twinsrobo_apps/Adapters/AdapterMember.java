@@ -95,7 +95,8 @@ public class AdapterMember extends RecyclerView.Adapter<AdapterMember.HolderData
             @Override
             public void onClick(View view) {
                 ((HomeActivity) ctx).showMemberPopupPreview(dm.getIdUser(),
-                        dm.getNamaDepanUser() + " " + dm.getNamaBelakangUser(),
+                        dm.getNamaDepanUser()
+                                + " " + dm.getNamaBelakangUser(),
                         dm.getJenisKelaminUser(),
                         dm.getFotoProfilUser());
             }

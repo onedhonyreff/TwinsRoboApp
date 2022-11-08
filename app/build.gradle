@@ -16,6 +16,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -54,11 +58,13 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
     implementation 'com.budiyev.android:code-scanner:2.1.0'
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata:2.3.1"
     implementation 'com.google.firebase:firebase-auth:20.0.4'
     implementation 'com.jaeger.statusbarutil:library:1.4.0'
-    implementation files('libs/activation.jar')
-    implementation files('libs/additionnal.jar')
-    implementation files('libs/mail.jar')
+//    implementation files('libs/activation.jar')
+//    implementation files('libs/additionnal.jar')
+//    implementation files('libs/mail.jar')
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

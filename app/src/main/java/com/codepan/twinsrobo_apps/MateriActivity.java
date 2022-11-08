@@ -2,6 +2,8 @@ package com.codepan.twinsrobo_apps;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -51,12 +53,12 @@ public class MateriActivity extends AppCompatActivity {
     private YouTubePlayerView ytpMateri;
 
     private ImageView ivBackArrowMateri;
-    private TextView tvMateriContent;
+    private TextView tvMateriContent, tvJudulMateri;
     private EditText etTextFeedbackMateri;
-    private Button btnSendFeedbackMateri;
+    private Button btnSendFeedbackMateri, btnFullScreen;
 
     private ImageView ivImageZoom;
-    private float currentSecondVideo;
+    private float currentSecondVideo = 0f;
     private int imageMateri;
     private float currentRating = 0;
 
@@ -74,8 +76,10 @@ public class MateriActivity extends AppCompatActivity {
         rbRatingMateri = findViewById(R.id.rbRatingMateri);
         rvListImageMateri = findViewById(R.id.rvListImageMateri);
         tvMateriContent = findViewById(R.id.tvMateriContent);
+        tvJudulMateri = findViewById(R.id.tvJudulMateri);
         etTextFeedbackMateri = findViewById(R.id.etTextFeedbackMateri);
         btnSendFeedbackMateri = findViewById(R.id.btnSendFeedbackMateri);
+        btnFullScreen = findViewById(R.id.btnFullScreen);
         ivBackArrowMateri = findViewById(R.id.ivBackArrowMateri);
 
         if(savedInstanceState != null){
@@ -87,6 +91,8 @@ public class MateriActivity extends AppCompatActivity {
                 showImageMateriZoom(savedInstanceState.getInt("image_materi"));
             }
         }
+
+        tvJudulMateri.setText(bundle.getString("judul_materi"));
 
 //        wvWebsite.getSettings().setJavaScriptEnabled(true);
 //        wvWebsite.setWebChromeClient(new WebChromeClient());
@@ -109,6 +115,16 @@ public class MateriActivity extends AppCompatActivity {
             }
         });
 
+        btnFullScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MateriActivity.this, FullScreenVideoMateriActivity.class);
+                intent.putExtra("video_materi_full_screen", bundle.getString("video_materi"));
+                intent.putExtra("current_second", currentSecondVideo);
+                startActivity(intent);
+            }
+        });
+
         btnSendFeedbackMateri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +142,9 @@ public class MateriActivity extends AppCompatActivity {
         setRating(currentRating);
         showListImageMateri();
 
-        tvMateriContent.setText(Html.fromHtml("<h1>Robotika</h1>\n" +
+        tvMateriContent.
+                setText(Html.fromHtml(
+                "<h1>Robotika</h1>\n" +
                 "<div style=\"text-align: justify; text-justify: inter-word\" ><p>Pendidikan merupakan faktor utama dalam pembentukan pribadi setiap manusia yang juga merupakan salah satu usaha untuk mencerdaskan kehidupan bangsa. Dalam memasuki era globalisasi yang penuh dengan persaingan, peran pendidikan sangatlah penting sebagai sarana peningkatan kualitas sumber daya manusia untuk membentuk individu yang memiliki jiwa kreatif, mandiri dan profesional. Kecanggihan teknologi elektronika dan sistem otomasi diperlukan untuk mempermudah pekerjaan manusia (Wang, Wang and McLeod, 2018).</p></div>\n" +
                 "<div style=\"text-align: justify; text-justify: inter-word\"><p>Robot, sebagai salah satu hasil dari perkembangan teknologi yang pada dasarnya di desain untuk memberikan kemudahan kepada manusia. Sejalan dengan kemajuan ilmu dan teknologi, maka pada saat ini telah banyak ditemukan berbagai peralatan canggih yang dapat dimanfaatkan pada pelayanan kesehatan. Peralatan yang sudah ada sekarang kebanyakan impor dari luar negeri sehingga kebanyakan orang hanyak bisa menggunakanya (Mamzer et al., 2017). </p></div>\n" +
                 "<div style=\"text-align: justify; text-justify: inter-word\"><p>Maka dari itu diharapkan dengan adanya pengenalan dan pelatihan robotika pada penerapan ilmu kesehatan generasi muda diajak untuk belajar lebih tentang robot untuk kesehatan. Sehingga mampu untuk menciptakan alat-alat kesehatan sendiri yang dapat membantu, mempercepat pemeriksaan kesehatan di masyarakat.<p></div>\n" +
@@ -167,7 +185,7 @@ public class MateriActivity extends AppCompatActivity {
         }
 
         adDataImageMateri = new AdapterImageMateri(MateriActivity.this, dataImageMateri);
-        if(findViewById(R.id.rlLayoutMateri_potrait) != null){
+        if(getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
             lmDataImageMateri = new LinearLayoutManager(MateriActivity.this, LinearLayoutManager.HORIZONTAL, false);
         }
         else {

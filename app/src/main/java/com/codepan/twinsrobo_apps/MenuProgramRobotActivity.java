@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,6 +27,8 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
 public class MenuProgramRobotActivity extends AppCompatActivity implements View.OnClickListener{
+
+    public int REQUEST_CODE = 838;
 
     private InputMethodManager imm;
 
@@ -152,7 +155,11 @@ public class MenuProgramRobotActivity extends AppCompatActivity implements View.
         btnPlanPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MenuProgramRobotActivity.this, RobotPlanActivity.class));
+                startActivityForResult(
+                        new Intent(
+                                MenuProgramRobotActivity.this,
+                                RobotPlanActivity.class
+                        ), REQUEST_CODE);
             }
         });
 
@@ -698,7 +705,8 @@ public class MenuProgramRobotActivity extends AppCompatActivity implements View.
         ArrayList<String> insertedValue = new ArrayList<>();
         String[] scriptPerLine = tvProgramPreview.getText().toString().trim().split("\n");
         int requestLine = Integer.parseInt(etInsertAboveLine.getText().toString().trim());
-        int programsLastLineNumber = tvProgramPreview.getText().toString().trim().split("\n").length;
+//        int programsLastLineNumber = tvProgramPreview.getText().toString().trim().split("\n").length;
+        int programsLastLineNumber = scriptPerLine.length;
 
         tvProgramPreview.setText("");
         tvLineNumberProgramPreview.setText("");
@@ -744,6 +752,16 @@ public class MenuProgramRobotActivity extends AppCompatActivity implements View.
             }
             tvProgramPreview.setText(tvProgramPreview.getText().toString() + afterDeletedValue.get(i));
             tvLineNumberProgramPreview.setText(tvLineNumberProgramPreview.getText().toString() + tvProgramPreview.getText().toString().split("\n").length + ".");
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
+            tvLineNumberProgramPreview.setText(data.getStringExtra("number_text"));
+            tvProgramPreview.setText(data.getStringExtra("program_text"));
         }
     }
 

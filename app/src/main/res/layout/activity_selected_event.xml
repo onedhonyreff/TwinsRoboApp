@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/llDetailLomba_Potrait"
+    android:id="@+id/llDetailLomba"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".SelectedEventActivity">
 
@@ -19,26 +19,26 @@
             android:id="@+id/ivBackArrowDL"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/ic_arrow_back"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true" />
+            android:src="@drawable/ic_arrow_back" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Twins Robo App"
-            android:textColor="#FFFFFF"
             android:fontFamily="@font/mssemibold"
+            android:text="Twins Robo App"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:textStyle="normal"
-            android:textAlignment="center" />
+            android:textStyle="normal" />
 
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/ic_notifications"
             android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_notifications" />
 
     </RelativeLayout>
 
@@ -56,17 +56,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:layout_marginTop="-40dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/oval"
                 android:orientation="vertical"
-                android:paddingHorizontal="15dp"
-                android:layout_marginBottom="10dp">
+                android:paddingHorizontal="15dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -92,15 +92,15 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_marginHorizontal="19dp"
                     android:layout_marginVertical="15dp"
-                    android:layout_marginHorizontal="19dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tvIdEventDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="gone"/>
+                        android:visibility="gone" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -110,217 +110,248 @@
                             android:id="@+id/ivPamfletDetail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/banner_lomba"
                             android:adjustViewBounds="true"
-                            android:scaleType="centerCrop" />
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/banner_lomba" />
 
                         <RelativeLayout
                             android:id="@+id/rlBackgroundPointer"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="#CC444444"
-                            android:visibility="visible"/>
+                            android:visibility="visible" />
 
                         <LinearLayout
                             android:id="@+id/llZoomPamfletDetail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="5dp"
-                            android:background="#CC444444"
-                            android:layout_alignParentTop="true"
                             android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
                             android:layout_margin="10dp"
-                            android:foreground="?attr/selectableItemBackground"
+                            android:background="#CC444444"
                             android:clickable="true"
-                            android:focusable="true">
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Zoom"
-                                android:textSize="12sp"
-                                android:fontFamily="@font/mssemibold"
-                                android:textColor="#E7E7E7"
                                 android:layout_gravity="center"
-                                android:layout_marginHorizontal="5dp"/>
+                                android:layout_marginHorizontal="5dp"
+                                android:fontFamily="@font/mssemibold"
+                                android:text="Zoom"
+                                android:textColor="#E7E7E7"
+                                android:textSize="12sp" />
+
                             <ImageView
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
-                                android:src="@drawable/ic_zoom"
-                                android:adjustViewBounds="true"/>
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_zoom" />
                         </LinearLayout>
 
                         <ImageView
                             android:id="@+id/ivPointerToZoomPamfletDetail"
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:layout_toRightOf="@id/llZoomPamfletDetail"
                             android:layout_below="@+id/llZoomPamfletDetail"
-                            android:layout_marginTop="-65dp"
                             android:layout_marginLeft="-80dp"
+                            android:layout_marginTop="-65dp"
+                            android:layout_toRightOf="@id/llZoomPamfletDetail"
                             android:src="@drawable/pointing_anim2"
-                            android:visibility="visible"/>
+                            android:visibility="visible" />
+
                         <TextView
                             android:id="@+id/tvTextToZoom"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
                             android:layout_below="@+id/ivPointerToZoomPamfletDetail"
-                            android:textColor="#FFFFFF"
-                            android:textSize="12sp"
+                            android:layout_marginLeft="30dp"
+                            android:fontFamily="@font/mssemibold"
                             android:text="Click Here To Zoom"
-                            android:fontFamily="@font/mssemibold"/>
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
 
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="-45dp">
+                        android:layout_marginTop="-45dp"
+                        android:layout_marginBottom="10dp">
+
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
                             android:id="@+id/fabLikeEvent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
-                            android:src="@drawable/ic_disslike"
-                            app:backgroundTint="#FFFFFF"
                             android:layout_margin="15dp"
-                            app:elevation="5dp"
                             android:clickable="true"
                             android:focusable="true"
-                            android:foreground="@drawable/btn_ripple_effect"/>
+                            android:foreground="@drawable/btn_ripple_effect"
+                            android:src="@drawable/ic_disslike"
+                            app:backgroundTint="#FFFFFF"
+                            app:elevation="5dp" />
+
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
                             android:id="@+id/fabShareEvent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@id/fabLikeEvent"
-                            android:src="@drawable/ic_share"
-                            app:backgroundTint="#FFFFFF"
                             android:layout_marginVertical="15dp"
-                            app:elevation="5dp"
+                            android:layout_toLeftOf="@id/fabLikeEvent"
                             android:clickable="true"
                             android:focusable="true"
-                            android:foreground="@drawable/btn_ripple_effect"/>
+                            android:foreground="@drawable/btn_ripple_effect"
+                            android:src="@drawable/ic_share"
+                            app:backgroundTint="#FFFFFF"
+                            app:elevation="5dp" />
+
+                        <LinearLayout
+                            android:id="@+id/llDaftarEvent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/red_selected"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/btn_ripple_effect_low_radius"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="30dp"
+                            android:paddingVertical="10dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/fabShareEvent"
+                            android:layout_marginTop="-30dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mssemibold"
+                                android:text="Daftar"
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp" />
+                        </LinearLayout>
                     </RelativeLayout>
 
                     <TextView
                         android:id="@+id/tvDurasiTanggalDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="3 Desember 2020"
-                        android:fontFamily="@font/msmedium" />
+                        android:fontFamily="@font/msmedium"
+                        android:text="3 Desember 2020" />
 
                     <TextView
                         android:id="@+id/tvJudulLombaDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Super Lomba Robotik Nasional 2021"
+                        android:layout_marginVertical="10dp"
                         android:fontFamily="@font/mssemibold"
-                        android:textSize="20sp"
-                        android:layout_marginVertical="10dp" />
+                        android:text="Super Lomba Robotik Nasional 2021"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/tvDeskripsiDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/msmedium"
                         android:text="Dengan bangga Rotary Club of Surabaya Persada mengadakan *Lomba Robotika Nasional ke 2 tahun 2021* yg akan diselenggarakan pada tanggal *27-28 Maret 2021*.
 Piagam pemenang tandatangan Gubernur Jawa Timur.\n\nKategori lomba dan contact person tertera di flyer.\n\nKetentuan pembayaran :
 *Early Bird* Rp 250.000 tgl 28 - 29 Nov 2020.
 Tgl 30 Nov 2020 dst Rp 300.000
-Pendaftaran ke rekening BCA 0884574443 atas nama Roos Hermansyah"
-                        android:fontFamily="@font/msmedium"
-                        android:layout_marginBottom="20dp" />
+Pendaftaran ke rekening BCA 0884574443 atas nama Roos Hermansyah" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="4dp">
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/btnCatSumoRcDetail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingHorizontal="18dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
                             android:background="@drawable/blue_selected"
-                            android:textColor="#FFFFFF"
                             android:fontFamily="@font/msmedium"
+                            android:paddingHorizontal="18dp"
                             android:text="Sumo RC"
-                            android:textSize="13sp"
-                            android:textAllCaps="false"/>
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp" />
 
                         <Button
                             android:id="@+id/btnCatMazeSolvingDetail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingHorizontal="18dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
                             android:background="@drawable/blue_selected"
-                            android:textColor="#FFFFFF"
                             android:fontFamily="@font/msmedium"
+                            android:paddingHorizontal="18dp"
                             android:text="Maze Solving"
-                            android:textSize="13sp"
-                            android:textAllCaps="false"/>
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="4dp">
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/btnCatTransporterDetail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingHorizontal="18dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
                             android:background="@drawable/blue_selected"
-                            android:textColor="#FFFFFF"
                             android:fontFamily="@font/msmedium"
+                            android:paddingHorizontal="18dp"
                             android:text="Transporter"
-                            android:textSize="13sp"
-                            android:textAllCaps="false"/>
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp" />
 
                         <Button
                             android:id="@+id/btnCatDroneRaceDetail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingHorizontal="18dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
                             android:background="@drawable/blue_selected"
-                            android:textColor="#FFFFFF"
                             android:fontFamily="@font/msmedium"
+                            android:paddingHorizontal="18dp"
                             android:text="Drone Race"
-                            android:textSize="13sp"
-                            android:textAllCaps="false"/>
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="4dp">
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/btnCatUnderWaterDetail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:maxWidth="100dp"
-                            android:paddingHorizontal="18dp"
                             android:layout_marginHorizontal="2dp"
                             android:layout_weight="1"
                             android:background="@drawable/blue_selected"
-                            android:textColor="#FFFFFF"
                             android:fontFamily="@font/msmedium"
+                            android:maxWidth="100dp"
+                            android:paddingHorizontal="18dp"
                             android:text="Underwater"
-                            android:textSize="13sp"
-                            android:textAllCaps="false"/>
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp" />
                     </LinearLayout>
 
                     <RelativeLayout
@@ -331,10 +362,10 @@ Pendaftaran ke rekening BCA 0884574443 atas nama Roos Hermansyah"
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_alignParentRight="true"
                             android:layout_alignParentTop="true"
-                            android:layout_marginRight="8dp">
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="8dp"
+                            android:orientation="horizontal">
 
                             <ImageView
                                 android:layout_width="14dp"
@@ -346,11 +377,11 @@ Pendaftaran ke rekening BCA 0884574443 atas nama Roos Hermansyah"
                                 android:id="@+id/tvNumberOfSharesDetail"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/msmedium"
-                                android:textSize="10sp"
-                                android:text="100"
+                                android:layout_gravity="center"
                                 android:layout_marginRight="10dp"
-                                android:layout_gravity="center" />
+                                android:fontFamily="@font/msmedium"
+                                android:text="100"
+                                android:textSize="10sp" />
 
                             <ImageView
                                 android:layout_width="14dp"
@@ -362,10 +393,10 @@ Pendaftaran ke rekening BCA 0884574443 atas nama Roos Hermansyah"
                                 android:id="@+id/tvNumberOfViewsDetail"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center"
                                 android:fontFamily="@font/msmedium"
-                                android:textSize="10sp"
                                 android:text="1000"
-                                android:layout_gravity="center" />
+                                android:textSize="10sp" />
                         </LinearLayout>
                     </RelativeLayout>
                 </LinearLayout>

@@ -28,34 +28,36 @@ public class AdapterChampionship extends RecyclerView.Adapter<AdapterChampionshi
         this.listDataChampion = listDataChampion;
     }
 
+    public class HolderData extends RecyclerView.ViewHolder {
+        ImageView ivPhotoChampion, ivTrophyChampion;
+        TextView tvNameChampion, tvSchoolChampion, tvPointChampion;
+        public HolderData(@NonNull View itemView) {
+            super(itemView);
+            ivPhotoChampion = itemView.findViewById(R.id.ivPhotoChampion);
+            ivTrophyChampion = itemView.findViewById(R.id.ivTrophyChampion);
+            tvNameChampion = itemView.findViewById(R.id.tvNameChampion);
+            tvSchoolChampion = itemView.findViewById(R.id.tvSchoolChampion);
+            tvPointChampion = itemView.findViewById(R.id.tvPointChampion);
+        }
+    }
+
     @NonNull
     @Override
     public HolderData onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.championship_leader_item, parent, false);
+        View layout = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.championship_leader_item, parent, false);
         AdapterChampionship.HolderData holder = new AdapterChampionship.HolderData(layout);
         return holder;
     }
-
     @Override
     public void onBindViewHolder(@NonNull AdapterChampionship.HolderData holder, int position) {
         DataModelChampion dm = listDataChampion.get(position);
-
-        RequestOptions requestOptions = new RequestOptions();
-        requestOptions.skipMemoryCache(true);
-        requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE);
-        requestOptions.override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL);
-        requestOptions.placeholder(R.drawable.anim_loading);
-        requestOptions.error(R.drawable.broken_image);
-
         Glide.with(ctx)
                 .load(dm.getFoto())
-                .apply(requestOptions)
                 .into(holder.ivPhotoChampion);
-
         holder.tvNameChampion.setText(dm.getNama());
         holder.tvSchoolChampion.setText(dm.getSekolah());
         holder.tvPointChampion.setText(dm.getPoint());
-
         if(position <= 2){
             if (position == 0){
                 holder.ivTrophyChampion.setImageResource(R.drawable.trophy1);
@@ -71,25 +73,8 @@ public class AdapterChampionship extends RecyclerView.Adapter<AdapterChampionshi
             holder.ivTrophyChampion.setVisibility(View.GONE);
         }
     }
-
     @Override
     public int getItemCount() {
         return listDataChampion.size();
-    }
-
-    public class HolderData extends RecyclerView.ViewHolder {
-
-        ImageView ivPhotoChampion, ivTrophyChampion;
-        TextView tvNameChampion, tvSchoolChampion, tvPointChampion;
-
-        public HolderData(@NonNull View itemView) {
-            super(itemView);
-
-            ivPhotoChampion = itemView.findViewById(R.id.ivPhotoChampion);
-            ivTrophyChampion = itemView.findViewById(R.id.ivTrophyChampion);
-            tvNameChampion = itemView.findViewById(R.id.tvNameChampion);
-            tvSchoolChampion = itemView.findViewById(R.id.tvSchoolChampion);
-            tvPointChampion = itemView.findViewById(R.id.tvPointChampion);
-        }
     }
 }

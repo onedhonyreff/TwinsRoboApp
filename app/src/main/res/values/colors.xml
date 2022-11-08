@@ -7,4 +7,5 @@
     <color name="colorwhite">#FFFFFF</color>
     <color name="colorripple">#373737</color>
     <color name="colornormaltext">#777777</color>
+    <color name="SysNavBacground">#0094EF</color>
 </resources>

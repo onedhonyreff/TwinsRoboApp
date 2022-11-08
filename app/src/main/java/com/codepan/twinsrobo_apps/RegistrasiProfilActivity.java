@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -169,10 +170,13 @@ public class RegistrasiProfilActivity extends AppCompatActivity {
         ivRegDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new DatePickerDialog(RegistrasiProfilActivity.this, date,
+                new DatePickerDialog(
+                        RegistrasiProfilActivity.this,
+                        date,
                         myCalendar.get(Calendar.YEAR),
                         myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                        myCalendar.get(Calendar.DAY_OF_MONTH)
+                ).show();
             }
         });
 
@@ -351,7 +355,7 @@ public class RegistrasiProfilActivity extends AppCompatActivity {
 
         adapterAvatar = new AdapterAvatar(this, imageAvatar);
 
-        if (popUpAvatarDialog.findViewById(R.id.llAvatarPallete_Potrait) != null) {
+        if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             columnCount = 3;
         } else {
             columnCount = 4;
@@ -446,15 +450,21 @@ public class RegistrasiProfilActivity extends AppCompatActivity {
 
     private void genderSelected() {
         if (gender == "Male") {
+//            tvMaleButton.setTextColor(ContextCompat.getColor(this, R.color.colorwhite));
+//            tvFemaleButton.setTextColor(ContextCompat.getColor(this, R.color.colornormaltext));
+
             rlMaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.blue_selected));
-            tvMaleButton.setTextColor(ContextCompat.getColor(this, R.color.colorwhite));
-            rlFemaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field));
-            tvFemaleButton.setTextColor(ContextCompat.getColor(this, R.color.colornormaltext));
+            tvMaleButton.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(this, R.drawable.ic_checklist), null);
+            rlFemaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.gender_selector));
+            tvFemaleButton.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
         } else {
+//            tvFemaleButton.setTextColor(ContextCompat.getColor(this, R.color.colorwhite));
+//            tvMaleButton.setTextColor(ContextCompat.getColor(this, R.color.colornormaltext));
+
             rlFemaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.pink_selected));
-            tvFemaleButton.setTextColor(ContextCompat.getColor(this, R.color.colorwhite));
-            rlMaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.input_field));
-            tvMaleButton.setTextColor(ContextCompat.getColor(this, R.color.colornormaltext));
+            tvMaleButton.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+            rlMaleButton.setBackground(ContextCompat.getDrawable(this, R.drawable.gender_selector));
+            tvFemaleButton.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(this, R.drawable.ic_checklist), null);
         }
     }
 
