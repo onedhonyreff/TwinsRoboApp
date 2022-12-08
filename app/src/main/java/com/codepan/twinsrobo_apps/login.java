@@ -201,28 +201,32 @@ public class login extends AppCompatActivity {
         requestLogin.enqueue(new Callback<ResponseModelLogin>() {
             @Override
             public void onResponse(Call<ResponseModelLogin> call, Response<ResponseModelLogin> response) {
-                List<DataModelLogin> listDataLogin = response.body().getDataLogin(0);
-                DataModelLogin dml = listDataLogin.get(0);
+                if(response.body().getDataLogin(0) != null){
+                    List<DataModelLogin> listDataLogin = response.body().getDataLogin(0);
+                    DataModelLogin dml = listDataLogin.get(0);
 
-                if (Integer.parseInt(dml.getUsercount()) > 0) {
-                    try {
-                        Intent intent = new Intent(login.this, HomeActivity.class);
-                        intent.putExtra("id_user_login", dml.getIdUser());
-                        intent.putExtra("nama_depan_login", dml.getNamaDepanUser());
-                        startActivity(intent);
-                        overridePendingTransition(R.anim.slide_up_in_anim, R.anim.slide_up_out_anim);
+                    if (Integer.parseInt(dml.getUsercount()) > 0) {
+                        try {
+                            Intent intent = new Intent(login.this, HomeActivity.class);
+                            intent.putExtra("id_user_login", dml.getIdUser());
+                            intent.putExtra("nama_depan_login", dml.getNamaDepanUser());
+                            startActivity(intent);
+                            overridePendingTransition(R.anim.slide_up_in_anim, R.anim.slide_up_out_anim);
 //                        Toast.makeText(login.this, "Login Sukses", Toast.LENGTH_SHORT).show();
 
-                        saveLoginSession(dml.getIdUser(), dml.getNamaDepanUser());
-                        finish();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        Toast.makeText(login.this, "Error, coba lagi...", Toast.LENGTH_SHORT).show();
+                            saveLoginSession(dml.getIdUser(), dml.getNamaDepanUser());
+                            finish();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(login.this, "Error, coba lagi...", Toast.LENGTH_SHORT).show();
+                        }
+                        etLoginEmail.setText("");
+                        etLoginPass.setText("");
+                    } else {
+                        Toast.makeText(login.this, "Username / password salah", Toast.LENGTH_SHORT).show();
                     }
-                    etLoginEmail.setText("");
-                    etLoginPass.setText("");
                 } else {
-                    Toast.makeText(login.this, "Username / password salah", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "User atau password salah", Toast.LENGTH_SHORT).show();
                 }
                 isProcess(false);
             }
@@ -296,12 +300,16 @@ public class login extends AppCompatActivity {
 
         progressDialog.dismiss();
 
-        if(pesan.equals("Success")){
-            insertCodeOTP();
-        }
-        else {
-            Toast.makeText(this, "Email verifikasi tidak terkirim", Toast.LENGTH_SHORT).show();
-        }
+        // sementara matikan fungsi otp setelah google mematikan fitur allow risk app
+//        if(pesan.equals("Success")){
+//            insertCodeOTP();
+//        }
+//        else {
+//            Toast.makeText(this, "Email verifikasi tidak terkirim", Toast.LENGTH_SHORT).show();
+//        }
+
+        Toast.makeText(this, kodeVerifikasi, Toast.LENGTH_SHORT).show();
+        insertCodeOTP();
     }
 
     private void insertNewPassword(String lastInputText){

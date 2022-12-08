@@ -278,12 +278,16 @@ public class SigninActivity extends AppCompatActivity {
             onProgressDialog = false;
         }
 
-        if(pesan.equals("Success")){
-            sbToast.show();
-        }
-        else {
-            Toast.makeText(this, "Email verifikasi tidak terkirim", Toast.LENGTH_SHORT).show();
-        }
+        // sementara matikan fungsi otp setelah google mematikan fitur allow risk app
+//        if(pesan.equals("Success")){
+//            sbToast.show();
+//        }
+//        else {
+//            Toast.makeText(this, "Email verifikasi tidak terkirim", Toast.LENGTH_SHORT).show();
+//        }
+
+        Toast.makeText(this, kodeVerifikasi, Toast.LENGTH_SHORT).show();
+        sbToast.show();
     }
 
     private void insertCodeOTP(){
