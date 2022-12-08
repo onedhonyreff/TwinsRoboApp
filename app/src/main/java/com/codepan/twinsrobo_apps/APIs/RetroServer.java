@@ -7,7 +7,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroServer {
-    private static final String baseURL = "http://192.168.43.59/twinsrobo/";    //ini jaringan hotspot
+    private static final String baseURL = "https://twinsroboserver.onedhonyreff.repl.co/twinsrobo/";    //ini hosting dari Replit.co
+//    private static final String baseURL = "http://192.168.43.59/twinsrobo/";    //ini jaringan hotspot
     //    private static final String baseURL = "http://10.59.103.110/twinsrobo/";    // ini jaringan wifi lab
 //    private static final String baseURL = "http://192.168.0.167/twinsrobo/";    // ini jaringan wifi tempat magang
     private static Retrofit retro;
